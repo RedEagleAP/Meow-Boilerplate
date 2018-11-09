@@ -1,0 +1,110 @@
+/*
+ |--------------------------------------------------------------------------
+ |  Headings
+ |--------------------------------------------------------------------------
+ */
+// Dependencies
+@import '../../../../node_modules/modularscale-sass/stylesheets/modularscale';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  word-wrap: break-word;
+  line-height: 1.2;
+  font-weight: 700;
+  @include make-vr(2);
+  @include flu(sp(-1), sp(-2), margin-bottom);
+}
+
+
+.a-headline--mega {
+  @include ms-respond(font-size, 6);
+}
+
+.a-headline--super {
+  @include ms-respond(font-size, 5);
+}
+
+h1,
+.a-headline--h1 {
+  @include ms-respond(font-size, 4);
+}
+
+h2,
+.a-headline--h2 {
+  @include ms-respond(font-size, 3);
+}
+
+h3,
+.a-headline--h3 {
+  @include ms-respond(font-size, 2);
+}
+
+h4,
+.a-headline--h4 {
+  @include ms-respond(font-size, 1);
+}
+
+h5,
+.a-headline--h5 {
+  @include ms-respond(font-size, 0);
+}
+
+h6,
+.a-headline--h6 {
+  @include ms-respond(font-size, 0);
+}
+
+// Respond
+/* stylelint-disable */
+.ms-res-9 {
+  @include ms-respond(font-size, 9);
+}
+
+.ms-res-8 {
+  @include ms-respond(font-size, 8);
+}
+
+.ms-res-7 {
+  @include ms-respond(font-size, 7);
+}
+
+.ms-res-6 {
+  @include ms-respond(font-size, 6);
+}
+
+.ms-res-5 {
+  @include ms-respond(font-size, 5);
+}
+
+.ms-res-4 {
+  @include ms-respond(font-size, 4);
+}
+
+.ms-res-3 {
+  @include ms-respond(font-size, 3);
+}
+
+.ms-res-2 {
+  @include ms-respond(font-size, 2);
+}
+
+.ms-res-1 {
+  @include ms-respond(font-size, 1);
+}
+
+.ms-res-0 {
+  @include ms-respond(font-size, 0);
+}
+
+.ms-res--1 {
+  @include ms-respond(font-size, -1);
+}
+
+.ms-res--2 {
+  @include ms-respond(font-size, -2);
+}
+/* stylelint-enable */

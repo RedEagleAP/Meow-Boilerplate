@@ -1,0 +1,31 @@
+/*
+ |--------------------------------------------------------------------------
+ |  Wrapper
+ |--------------------------------------------------------------------------
+ */
+
+.o-wrapper {
+  @include clearfix;
+  padding-left: sp(2);
+  padding-right: sp(2);
+  margin-right: auto;
+  margin-left: auto;
+  max-width: $bk-maxWidth;
+}
+
+
+// Size variants
+.o-wrapper--small {
+  padding-left: sp(4);
+  padding-right: sp(4);
+}
+
+.o-wrapper--large {
+  padding-left: sp(6);
+  padding-right: sp(6);
+}
+
+.o-wrapper--huge {
+  padding-left: sp(8);
+  padding-right: sp(8);
+}

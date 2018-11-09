@@ -1,0 +1,99 @@
+// Maths helpers.
+//
+// Halve and double numbers, returning rounded integers. E.g.:
+//
+// .foo {
+//     padding: halve(3.2px);
+// }
+//
+@function quarter($number) {
+  @return round($number / 4);
+}
+
+@function halve($number) {
+  @return round($number / 2);
+}
+
+@function double($number) {
+  @return round($number * 2);
+}
+
+@function quadruple($number) {
+  @return round($number * 4);
+}
+
+// Square root function, returning the positive square root of a number
+//
+@function squareroot($number) {
+  $x0: 1;
+  $x1: $x0;
+
+  @for $i from 1 through 10 {
+    $x1: $x0 - ($x0 * $x0 - abs($number)) / (2 * $x0);
+    $x0: $x1;
+  }
+
+  @return $x1;
+}
+
+// Power function, returning $number to the power of $exponent (or $number^$exponent)
+//
+@function power($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
+
+@function pi() {
+  @return 3.14159265359;
+}
+
+// Arcussinus function, returning the angle to a given sinus in rad.
+// This is used by the arrow-round function to determine how far the two arrow sides need to be rotated.
+//
+@function arcussinus($z, $threshold: pi() / 180 / 10) {
+  $sinOfPiDivBy4: 0.013707354604707;// sin(PI / 4)
+  $sum: 0;
+  $complement: false;
+  $sign: $z / abs($z);
+  $z: abs($z);
+
+  @if $z > $sinOfPiDivBy4 {
+    $complement: true;
+    $z: squareroot(1 - power($z, 2));
+  }
+
+  $term: $z;
+  $i: 0;
+  $k: 1;
+
+  @while $term > $threshold {
+    $sum: $sum + $term;
+
+    $i: $i + 1;
+    $k: $k * (2 * $i - 1) / (2 * $i);
+    $j: 2 * $i + 1;
+
+    $term: $k * power($z, $j) / $j;
+  }
+
+  @return $sign * (if($complement, pi() / 2 - $sum, $sum));
+}
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+//
+@function stripunit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}

@@ -1,0 +1,90 @@
+// All SVG Sprites are in this Map
+//
+// @type Map
+/* stylelint-disable */
+
+$svgspritebase: (
+  width: 120px,
+  height: 120px
+);
+
+$svgsprites: (
+  icon-buffer: (
+    width: 30px,
+    height: 30px,
+    posX: -30px,
+    posY: 0px
+  ),
+  icon-email: (
+    width: 30px,
+    height: 30px,
+    posX: 0px,
+    posY: -60px
+  ),
+  icon-facebook: (
+    width: 30px,
+    height: 30px,
+    posX: 0px,
+    posY: -30px
+  ),
+  icon-googleplus: (
+    width: 30px,
+    height: 30px,
+    posX: -30px,
+    posY: -30px
+  ),
+  icon-instagram: (
+    width: 30px,
+    height: 30px,
+    posX: -60px,
+    posY: 0px
+  ),
+  icon-linkedin: (
+    width: 30px,
+    height: 30px,
+    posX: -60px,
+    posY: -30px
+  ),
+  icon-pinterest: (
+    width: 30px,
+    height: 30px,
+    posX: 0px,
+    posY: 0px
+  ),
+  icon-reddit: (
+    width: 30px,
+    height: 30px,
+    posX: -30px,
+    posY: -60px
+  ),
+  icon-twitter: (
+    width: 30px,
+    height: 30px,
+    posX: -60px,
+    posY: -60px
+  ),
+  icon-vimeo: (
+    width: 30px,
+    height: 30px,
+    posX: -90px,
+    posY: 0px
+  ),
+  icon-whatsapp: (
+    width: 30px,
+    height: 30px,
+    posX: -90px,
+    posY: -30px
+  ),
+  icon-xing: (
+    width: 30px,
+    height: 30px,
+    posX: -90px,
+    posY: -60px
+  ),
+  icon-youtube: (
+    width: 30px,
+    height: 30px,
+    posX: 0px,
+    posY: -90px
+  ),
+);

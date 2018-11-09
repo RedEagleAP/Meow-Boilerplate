@@ -1,0 +1,13 @@
+/* -------------------------------------------------- */
+/*    .lazyload
+/* -------------------------------------------------- */
+
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 0.875s 0.125s ease('out-cubic');
+}

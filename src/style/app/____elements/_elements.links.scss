@@ -1,0 +1,26 @@
+/* -------------------------------------------------- */
+/*    Links
+/* -------------------------------------------------- */
+
+a {
+  color: co('blue');
+  text-decoration: none;
+  transition: all 0.25s ease('out-cubic');
+
+
+  &:hover {
+    color: darken(co('blue'), 10%);
+  }
+}
+
+.a-richText a,
+.m-richTextMarginals a {
+  border-bottom: 1px solid co('blue');
+  text-decoration: none;
+  padding-bottom: 1px;
+
+  &:hover {
+    padding-bottom: 1px;
+    border-bottom: 1px solid darken(co('blue'), 10%);
+  }
+}

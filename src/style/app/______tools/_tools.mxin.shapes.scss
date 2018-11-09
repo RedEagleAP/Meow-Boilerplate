@@ -1,0 +1,267 @@
+@mixin arrow-round($direction, $width, $height, $thickness, $color) {
+  $heightUnitless: stripunit($height);
+  $heightUnit: $height / $heightUnitless;
+  $widthUnitless: stripunit($width);
+  $widthUnit: $width / $widthUnitless;
+  @if $heightUnit == 1 {
+    $heightUnit: 1px;
+  }
+  @if $widthUnit == 1 {
+    $widthUnit: 1px;
+  }
+
+  $hypotenuse: squareroot(power($widthUnitless, 2) + power($heightUnitless * 0.5, 2));
+  $angle: arcussinus(($heightUnitless * 0.5) / $hypotenuse);
+
+  position: absolute;
+
+  display: block;
+  width: $widthUnitless * $widthUnit;
+  height: $heightUnitless * $heightUnit;
+
+  @if $direction == 'up' {
+    transform: rotate(90deg);
+  } @else if $direction == 'right' {
+    transform: rotate(180deg);
+  } @else if $direction == 'down' {
+    transform: rotate(-90deg);
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: calc(50% - #{$thickness * 0.5});
+    left: 0;
+
+    display: block;
+    width: ($hypotenuse / $widthUnitless) * 100%;
+    height: $thickness;
+
+    border-radius: $thickness * 0.5;
+    background: $color;
+
+    transform-origin: $thickness * 0.5 $thickness * 0.5;
+
+    content: '';
+  }
+
+  &::before {
+    transform: rotate(-#{$angle}rad);
+  }
+
+  &::after {
+    transform: rotate(#{$angle}rad);
+  }
+}
+
+@mixin arrow-dimensions($direction, $size, $thickness) {
+  $shorter-side: $size;
+  $longer-side: 2 * ($shorter-side - $thickness / 1.4142);
+  @if ($direction == 'up' or $direction == 'down') {
+    width: $longer-side;
+    height: $shorter-side;
+  } @else {
+    width: $shorter-side;
+    height: $longer-side;
+  }
+}
+
+@mixin arrow($direction, $size, $thickness, $color) {
+  @include arrow-dimensions($direction, $size, $thickness);
+
+  position: relative;
+
+  display: inline-block;
+
+  @if ($direction == 'left' or $direction == 'up') {
+    transform: rotate(180deg);
+  }
+
+  &::before {
+    position: absolute;
+
+    @if ($direction == 'up' or $direction == 'down') {
+      bottom: 0;
+      left: 50%;
+
+      padding-bottom: calc(70.71% - #{$thickness});
+      width: 70.71%;
+      border-bottom: $thickness solid $color;
+      border-left: $thickness solid $color;
+
+      transform: rotate(-45deg) translateZ(0);
+      transform-origin: bottom left;
+    } @else {
+      right: 0;
+      bottom: 50%;
+
+      padding-bottom: calc(141.42% - #{2 * $thickness}); // 141.42% = sqrt(2) * 100%
+      width: calc(141.42% - #{$thickness});
+      border-right: $thickness solid $color;
+      border-bottom: $thickness solid $color;
+
+      transform: rotate(-45deg) translateZ(0);
+      transform-origin: bottom right;
+    }
+
+    content: '';
+  }
+}
+
+@mixin cross($size, $thickness, $color) {
+  position: relative;
+
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: $size;
+  height: $size;
+  border: 0;
+
+  background-color: transparent;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - #{$thickness / 2});
+
+    display: block;
+    width: $thickness;
+    height: 141.42%; // 100% * sqrt(2) = 141.42135%
+
+    background-color: $color;
+
+    transform-origin: center center;
+
+    content: '';
+  }
+
+  &::before {
+    transform: translate3d(0, -50%, 0) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate3d(0, -50%, 0) rotate(-45deg);
+  }
+}
+
+@mixin rectangle($width, $height, $color) {
+  width: $width;
+  height: $height;
+  background: $color;
+}
+
+@mixin parallelogram($width, $height, $skew, $color) {
+  @include rectangle($width, $height, $color);
+
+  transform: skew($skew);
+}
+
+@mixin square($size, $color) {
+  @include rectangle($size, $size, $color);
+}
+
+@mixin circle($size, $color) {
+  @include square($size, $color);
+
+  border-radius: $size / 2;
+}
+
+@mixin oval($width, $height, $color) {
+  width: $width;
+  height: $height;
+
+  border-radius: #{$width} / #{$height};
+  background: $color;
+}
+
+@mixin triangle($size, $color, $direction: 'up') {
+  width: 0;
+  height: 0;
+
+  @if $direction == 'up' {
+    border-right: $size solid transparent;
+    border-bottom: $size * 1.732 solid $color;
+    border-left: $size solid transparent;
+  } @else if $direction == 'down' {
+    border-top: $size * 1.732 solid $color;
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+  } @else if $direction == 'left' {
+    border-top: $size solid transparent;
+    border-right: $size * 1.732 solid $color;
+    border-bottom: $size solid transparent;
+  } @else if $direction == 'right' {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size * 1.732 solid $color;
+  }
+}
+
+@mixin corner-triangle($size, $color, $corner: 'top-left') {
+  width: 0;
+  height: 0;
+
+  @if $corner == 'top-left' {
+    border-top: $size solid $color;
+    border-right: $size solid transparent;
+  } @else if $corner == 'top-right' {
+    border-top: $size solid $color;
+    border-left: $size solid transparent;
+  } @else if $corner == 'bottom-left' {
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  } @else if $corner == 'bottom-right' {
+    border-bottom: $size solid $color;
+    border-left: $size solid transparent;
+  }
+}
+
+@mixin trapezoid($width, $color) {
+  width: $width;
+  height: 0;
+  border-right: $width / 2 solid transparent;
+  border-bottom: $width solid $color;
+  border-left: $width / 2 solid transparent;
+}
+
+@mixin chevron($width, $height, $skew, $color, $direction: 'up') {
+  position: relative;
+
+  width: $width;
+  height: $height;
+
+  @if $direction == 'down' {
+    transform: rotate(180deg);
+  } @else if $direction == 'left' {
+    transform: rotate(-90deg);
+  } @else if $direction == 'right' {
+    transform: rotate(90deg);
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+
+    width: 50%;
+    height: 100%;
+
+    background: $color;
+
+    content: '';
+  }
+
+  &::before {
+    left: 0;
+
+    transform: skew(0deg, $skew);
+  }
+
+  &::after {
+    right: 0;
+
+    transform: skew(0deg, -$skew);
+  }
+}

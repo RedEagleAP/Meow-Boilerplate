@@ -1,0 +1,171 @@
+{
+  "dist": {
+    "img": "dist/assets/img/",
+    "cssimgRoot": "/assets/img/",
+    "dist": "dist/",
+    "base": "dist/",
+    "markup": "dist/",
+    "assets": "dist/assets/",
+    "browserSyncDir": "dist/",
+    "css": "dist/assets/css/",
+    "js": "dist/assets/js/",
+    "fonts": "dist/assets/fonts/",
+    "cssimg": "dist/assets/img/",
+    "bitmaps": "dist/assets/img/bitmaps/",
+    "vectors": "dist/assets/img/svgfiles/",
+    "contentimage": "dist/images/",
+    "webpackassets": "assets/",
+    "webpackpublic": "dist/"
+  },
+  "template": {
+    "globalTitle": "MeowBoilerplate",
+    "compiler": false
+  },
+  "browsersync": {
+    "openbrowser": true,
+    "port": 3000,
+    "https": false,
+    "proxy": false
+  },
+  "minify": {
+    "images": {
+      "svgoPlugins": [
+        {
+          "cleanupIDs": false
+        },
+        {
+          "removeComments": true
+        },
+        {
+          "removeViewBox": false
+        },
+        {
+          "removeDesc": true
+        },
+        {
+          "removeUselessDefs": false
+        },
+        {
+          "removeDoctype": true
+        },
+        {
+          "removeEmptyText": true
+        },
+        {
+          "removeUnknownsAndDefaults": true
+        },
+        {
+          "removeEmptyContainers": true
+        },
+        {
+          "collapseGroups": true
+        },
+        {
+          "removeUselessStrokeAndFill": true
+        },
+        {
+          "convertStyleToAttrs": true
+        }
+      ],
+      "optimizationLevel": 3,
+      "pngquant": {
+        "quality": "75-88",
+        "speed": 4
+      },
+      "progressive": true,
+      "interlaced": true
+    },
+    "javascript": {
+      "options": {
+        "mangle": false
+      }
+    }
+  },
+  "src": {
+    "baseconf": {
+      "type": "html",
+      "methodology": "sassITCSS",
+      "structure": "uncompiled",
+      "themeColor": "#29b8f2"
+    },
+    "base": "src/",
+    "style": "src/style/",
+    "template": "src/template/",
+    "js": "src/js/",
+    "scripts": "src/scripts",
+    "structure": "src/structure/",
+    "fonts": "src/fonts/",
+    "images": {
+      "base": "src/images/",
+      "bitmapSprite": {
+        "files": "src/images/bitmapSprite-assets/",
+        "name": "sprite.png"
+      },
+      "vectorSprite": {
+        "files": "src/images/vectorSprite-assets/",
+        "name": "vector-sprite.svg",
+        "symbolName": "symbol-sprite.svg",
+        "maxHeight": 30,
+        "maxWidth": 30,
+        "padding": 0
+      },
+      "bitmaps": "src/images/bitmapSingle-assets/",
+      "vectors": "src/images/vectorSingle-assets/"
+    },
+    "contentimage": "src/images/htmlimages/",
+    "system": "src/.system/",
+    "jsEntryPoints": {
+      "main": "./src/js/main.js"
+    }
+  },
+  "templatePath": {
+    "root": "./",
+    "css": "assets/css/",
+    "js": "assets/js/",
+    "fonts": "assets/fonts/",
+    "cssimage": "assets/img/",
+    "contentimage": "images/"
+  },
+  "css": {
+    "spacer": "20px",
+    "baseFontSize": "16px"
+  },
+  "files": {
+    "jsCopy": [],
+    "jsCombine": {
+      "files": [],
+      "filename": "scripts.js"
+    },
+    "fonts": [
+      "src/fonts/**"
+    ],
+    "launch": [
+      {
+        "src": "favicons/**",
+        "dest": "assets/img/system/"
+      },
+      {
+        "src": ".htaccess",
+        "dest": ""
+      },
+      {
+        "src": "404.html",
+        "dest": ""
+      },
+      {
+        "src": "robots.txt",
+        "dest": ""
+      }
+    ]
+  },
+  "cssabove": {
+    "width": "1440",
+    "height": "1280",
+    "minify": true,
+    "inline": false,
+    "sources": [
+      "index.html"
+    ],
+    "destFilename": "critical.css"
+  }
+}
