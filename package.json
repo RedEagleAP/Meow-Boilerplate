@@ -1,14 +1,30 @@
 {
   "name": "meow-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "It's just a little Meow Boilerplate for your next Project",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redeagleap/meow-boilerplate.git"
+  },
   "license": "MIT",
   "author": {
     "name": "Alexander Prisyazhnyuk",
-    "email": "insightinyourmind@gmail.com",
-    "url": ""
+    "email": "insightinyourmind@gmail.com"
   },
+  "keywords":[
+    "meow boilerplate",
+    "sass",
+    "babel",
+    "cypress",
+    "webpack",
+    "gulp",
+    "sassdoc",
+    "astrum",
+    "boilerplate",
+    "grid",
+    "layout",
+    "framework"
+  ],
   "scripts": {
     "assets": "gulp copy:assets --env=init",
     "build": "cross-env NODE_ENV=production npm run subtask:buildgulp && cross-env NODE_ENV=production npm run subtask:bundlewebpack",
