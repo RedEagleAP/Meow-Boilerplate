@@ -1,27 +1,12 @@
-![Logo of the project](./images/logo.png)
-[![NPM version][npm-image]][npm-url]  [![Travis Build Status][travis-image]][travis-url-main]  [![Dependency Status][daviddm-image]][daviddm-url]  [![Coverage Status][coverage-image]][coverage-url]
+<img alt="Meow" src="https://lh3.googleusercontent.com/qjc0gHFosK8Ks0018gHR_a6TAurgeV5sU0ugkRSMup1tACIYkmmcz8Kj0tmPSh2s7XwXA42VFyM" width="520px">
+
+[![npm version](https://badge.fury.io/js/meow-boilerplate.svg)](https://badge.fury.io/js/meow-boilerplate)  [![Travis Build Status](https://travis-ci.org/redeagleap/meow-boilerplate.svg?branch=master)](https://travis-ci.org/redeagleap/meow-boilerplate)  [![Dependencies Status](https://david-dm.org/redeagleap/meow-boilerplate/status.svg)](https://david-dm.org/redeagleap/meow-boilerplate)  [![Coverage Status](https://coveralls.io/repos/github/RedEagleAP/Meow-Boilerplate/badge.svg?branch=master)](https://coveralls.io/github/RedEagleAP/Meow-Boilerplate?branch=master)
 
 # MeowBoilerplate
 
 It's just a little Meow Boilerplate for your next Project. Most of the stuff fits for my own requirements and maybe you have the same, you can have a lot of fun with it.
 
 __Give it a try!__
-
-# Table of Contents
-
--  [Requirments](#requirments)
-
--  [Getting started](#getting-started)
-
--  [Commands](#commands)
-
--  [Built With](#built-with)
-
--  [Gulp Tasks](#gulp-tasks)
-
--  [Licensing](#licensing)
-
--  [Runs with Meow Boilerplate](#runs-with-meow-boilerplate)
 
 ## Requirments :pushpin:
 
