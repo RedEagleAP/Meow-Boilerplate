@@ -1,6 +1,6 @@
-<img alt="Meow" src="https://lh3.googleusercontent.com/qjc0gHFosK8Ks0018gHR_a6TAurgeV5sU0ugkRSMup1tACIYkmmcz8Kj0tmPSh2s7XwXA42VFyM" width="520px">
+<img alt="Meow" src="https://lh3.googleusercontent.com/qjc0gHFosK8Ks0018gHR_a6TAurgeV5sU0ugkRSMup1tACIYkmmcz8Kj0tmPSh2s7XwXA42VFyM">
 
-[![npm version](https://badge.fury.io/js/meow-boilerplate.svg)](https://badge.fury.io/js/meow-boilerplate)  [![Travis Build Status](https://travis-ci.org/redeagleap/meow-boilerplate.svg?branch=master)](https://travis-ci.org/redeagleap/meow-boilerplate)  [![Dependencies Status](https://david-dm.org/redeagleap/meow-boilerplate/status.svg)](https://david-dm.org/redeagleap/meow-boilerplate)  [![Coverage Status](https://coveralls.io/repos/github/RedEagleAP/Meow-Boilerplate/badge.svg?branch=master)](https://coveralls.io/github/RedEagleAP/Meow-Boilerplate?branch=master)
+[![npm version](https://badge.fury.io/js/meow-boilerplate.svg)](https://badge.fury.io/js/meow-boilerplate)  [![Dependencies Status](https://david-dm.org/redeagleap/meow-boilerplate/status.svg)](https://david-dm.org/redeagleap/meow-boilerplate)
 
 # MeowBoilerplate
 
