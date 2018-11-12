@@ -27,6 +27,7 @@ $ yarn add meow-boilerplate
 ```
 
 Then you need to delete `yarn.lock` or `package-lock.json` and `package.json`. After that `cd node_modules/meow-bilerplate` and extract all files and folders into your project root directory. Configurate `package.json` and `config.json` files according to your preference. And just `npm install` or `yarn`.
+
 Nice, now your project is ready for battle, and you just have to write your code, and not spend several hours each time setting up each new project. Enjoy!
 
 * Or clone the repo:

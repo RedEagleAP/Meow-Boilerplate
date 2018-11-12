@@ -5,7 +5,7 @@
 import bodyClass from '../scripts/bodyclass'
 import disableHover from '../scripts/disableHover'
 import resizeClass from '../scripts/resizeClass'
-import '../scripts/lazysize-init'
+// import '../scripts/lazysize-init'
 // import '../scripts/fontfaceobserver'
 // import '../scripts/pagetransition'
 // import '../scripts/smoothScroll'
