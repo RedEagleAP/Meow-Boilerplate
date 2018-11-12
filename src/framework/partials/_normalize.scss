@@ -25,6 +25,7 @@ html {
   } @else {
     font-size: map-get($kittn-typo, base-scale) + 0%;
   }
+  text-rendering: optimizeLegibility;
 }
 
 // Global Activation
