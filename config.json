@@ -144,6 +144,14 @@
         "src": "favicons/**",
         "dest": "assets/img/system/"
       },
+      {   
+        "src": "facebook-og-image.jpg",
+        "dest": "assets/img/system/"
+      },
+      {
+        "src": "twitter-og-image.jpg",
+        "dest": "assets/img/system/"
+      },
       {
         "src": ".htaccess",
         "dest": ""
@@ -159,8 +167,8 @@
     ]
   },
   "cssabove": {
-    "width": "1440",
-    "height": "1280",
+    "width": "1024",
+    "height": "768",
     "minify": true,
     "inline": false,
     "sources": [
