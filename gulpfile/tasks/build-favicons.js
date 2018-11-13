@@ -33,7 +33,7 @@ const buildFaviconTask = () => {
           appleStartup: true,
           coast: true,
           favicons: true,
-          firefox: false,
+          firefox: true,
           opengraph: false,
           twitter: false,
           windows: true,
