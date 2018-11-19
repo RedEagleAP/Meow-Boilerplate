@@ -1,6 +1,6 @@
 <img alt="Meow" src="https://lh3.googleusercontent.com/qjc0gHFosK8Ks0018gHR_a6TAurgeV5sU0ugkRSMup1tACIYkmmcz8Kj0tmPSh2s7XwXA42VFyM">
 
-[![npm version](https://badge.fury.io/js/meow-boilerplate.svg)](https://badge.fury.io/js/meow-boilerplate)  [![Dependencies Status](https://david-dm.org/redeagleap/meow-boilerplate/status.svg)](https://david-dm.org/redeagleap/meow-boilerplate)
+[![npm version](https://badge.fury.io/js/meow-boilerplate.svg)](https://badge.fury.io/js/meow-boilerplate)  [![Dependencies Status](https://david-dm.org/redeagleap/meow-boilerplate/status.svg)](https://david-dm.org/redeagleap/meow-boilerplate) [![devDependencies Status](https://david-dm.org/redeagleap/meow-boilerplate/dev-status.svg)](https://david-dm.org/redeagleap/meow-boilerplate?type=dev)
 
 # MeowBoilerplate
 
