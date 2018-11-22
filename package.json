@@ -146,7 +146,7 @@
     "sassdoc": "^2.5.1",
     "stylelint": "^9.8.0",
     "stylelint-config-sass-guidelines": "^5.2.0",
-    "stylelint-order": "^1.0.0",
+    "stylelint-order": "^2.0.0",
     "stylelint-scss": "^3.4.0",
     "stylelint-selector-bem-pattern": "^2.0.0",
     "webpack": "^4.26.0",
