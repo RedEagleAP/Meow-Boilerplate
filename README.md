@@ -1,20 +1,30 @@
-<img alt="Meow" src="https://lh3.googleusercontent.com/qjc0gHFosK8Ks0018gHR_a6TAurgeV5sU0ugkRSMup1tACIYkmmcz8Kj0tmPSh2s7XwXA42VFyM">
+<p align="center">
+<img src="https://lh3.googleusercontent.com/qjc0gHFosK8Ks0018gHR_a6TAurgeV5sU0ugkRSMup1tACIYkmmcz8Kj0tmPSh2s7XwXA42VFyM" alt="Meow-Boilerplate">
+</p>
 
-[![npm version](https://badge.fury.io/js/meow-boilerplate.svg)](https://badge.fury.io/js/meow-boilerplate)  [![Dependencies Status](https://david-dm.org/redeagleap/meow-boilerplate/status.svg)](https://david-dm.org/redeagleap/meow-boilerplate) [![devDependencies Status](https://david-dm.org/redeagleap/meow-boilerplate/dev-status.svg)](https://david-dm.org/redeagleap/meow-boilerplate?type=dev)
-
-# MeowBoilerplate
+# MeowBoilerplate [![npm version](https://badge.fury.io/js/meow-boilerplate.svg)](https://badge.fury.io/js/meow-boilerplate)  [![Dependencies Status](https://david-dm.org/redeagleap/meow-boilerplate/status.svg)](https://david-dm.org/redeagleap/meow-boilerplate) [![devDependencies Status](https://david-dm.org/redeagleap/meow-boilerplate/dev-status.svg)](https://david-dm.org/redeagleap/meow-boilerplate?type=dev)
 
 It's just a little Meow Boilerplate for your next Project. Most of the stuff fits for my own requirements and maybe you have the same, you can have a lot of fun with it.
 
 __Give it a try!__
 
-## Requirments :pushpin:
+# Table of Contents
+
+- [Requirments](#requirments)
+- [Getting Started](#getting-started)
+- [Commands](#commands)
+- [Built With](#built-with)
+- [Gulp Tasks](#gulp-tasks)
+- [License](#license)
+- [Runs with love  Meow Boilerplate](#runs-with-love-meow-boilerplate)
+
+## Requirments
 
 -  [NodeJS](https://nodejs.org/en/)
 
 -  [NPM](https://www.npmjs.com/) or [YARN](https://yarnpkg.com/lang/en/)
 
-## Getting started :rocket:
+## Getting started
 
 * Install with [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/lang/en/) to get all source files as they are available on Github:
 
@@ -50,7 +60,7 @@ $ yarn
 
 This install the required __node_modules__.
 
-## Commands :computer:
+## Commands
 
 _With Webpack you have to use NPM Script Commands_
 
@@ -86,7 +96,7 @@ Copy all or Generate the Template Files.
 
 Generate Favicons and the HTML Snippet (generated Files you will find in `src/.system/`)
 
-## Built With :hammer:
+## Built With
 
 *  [Gulp](https://gulpjs.com/) - Gulp is a toolkit for automating painful or time-consuming tasks in your development workflow
 
@@ -102,7 +112,7 @@ Generate Favicons and the HTML Snippet (generated Files you will find in `src/.s
 
 *  [Sassdoc](http://sassdoc.com/) - Sassdoc is a documentation system to build pretty and powerful docs in the blink of an eye.
 
-## Gulp Tasks :clipboard:
+## Gulp Tasks
 
 There are some Gulp Tasks there…
 
@@ -166,11 +176,11 @@ gulp sassdoc:generate
 gulp version:bump
 ```
 
-## Licensing :beginner:
+## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-## Runs with :yellow_heart: Meow Boilerplate
+## Runs with love Meow Boilerplate
 
 ```txt
 Meow Boilerplate made with love & help.
