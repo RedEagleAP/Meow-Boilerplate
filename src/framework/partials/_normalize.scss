@@ -256,11 +256,14 @@ a {
     color: map-get($kittn-color-route,link-active);
   }
 
-  &:hover,
-  &:active,
-  &:focus {
-    outline: 0;
-  }
+  /*Disable :focus on elements affects the accessibility  of interfaces.
+   *Use wisely!
+   */
+  // &:hover,
+  // &:active,
+  // &:focus {
+  //   outline: 0;
+  // }
 }
 
 /*
@@ -800,9 +803,12 @@ legend {
 */
 input {
   line-height: normal;
-  &:focus {
-    outline: 0;
-  }
+  /*Disable :focus on elements affects the accessibility  of interfaces.
+   *Use wisely!
+   */
+  // &:focus {
+  //   outline: 0;
+  // }
 }
 
 
@@ -870,15 +876,18 @@ input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
+/*Disable :focus on elements affects the accessibility  of interfaces.
+ *Use wisely!
+ */
+// button::-moz-focus-inner,
+// input::-moz-focus-inner {
+//   border: 0;
+//   padding: 0;
+// }
 
-button:focus {
-  outline: none;
-}
+// button:focus {
+//   outline: none;
+// }
 
 /*
   Textarea
