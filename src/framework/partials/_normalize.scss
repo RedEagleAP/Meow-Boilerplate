@@ -12,27 +12,27 @@ html {
   -ms-text-size-adjust: 100%;
   background: transparent;
 
-  @if map-get($kittn-activate, box-sizing) { box-sizing: border-box; }
+  @if map-get($meow-activate, box-sizing) { box-sizing: border-box; }
 
-  @if map-get($kittn-typo, unit) == rem {
-    @if $kittn-active-responsive-fonts != false {
-      @include responsive-fontsize($kittn-active-responsive-fonts);
+  @if map-get($meow-typo, unit) == rem {
+    @if $meow-active-responsive-fonts != false {
+      @include responsive-fontsize($meow-active-responsive-fonts);
 
     } @else {
-      font-size: map-get($kittn-typo, base-scale) + 0%;
+      font-size: map-get($meow-typo, base-scale) + 0%;
     }
 
   } @else {
-    font-size: map-get($kittn-typo, base-scale) + 0%;
+    font-size: map-get($meow-typo, base-scale) + 0%;
   }
   text-rendering: optimizeLegibility;
 }
 
 // Global Activation
 * {
-  @if map-get($kittn-activate, antialias) { @include antialias; }
+  @if map-get($meow-activate, antialias) { @include antialias; }
 
-  @if map-get($kittn-activate, box-sizing) == true {
+  @if map-get($meow-activate, box-sizing) == true {
     &, &:before, &:after {
       box-sizing: inherit;
     }
@@ -47,18 +47,18 @@ body {
 body {
   margin: 0;
   position: relative;
-  color: map-get($kittn-color-route, text);
-  @include fontsize(map-get($kittn-typo, base-size));
-  line-height: map-get($kittn-typo, line-height);
+  color: map-get($meow-color-route, text);
+  @include fontsize(map-get($meow-typo, base-size));
+  line-height: map-get($meow-typo, line-height);
 
-  @if map-get($kittn-activate, hyphens) { @include text-hyphen; }
+  @if map-get($meow-activate, hyphens) { @include text-hyphen; }
 
-  @if map-get($kittn-color-route, body) { background-color: map-get($kittn-color-route, body); }
+  @if map-get($meow-color-route, body) { background-color: map-get($meow-color-route, body); }
 
-  @if map-get($kittn-typo-style, base-weight) { font-weight: map-get($kittn-typo-style, base-weight); }
+  @if map-get($meow-typo-style, base-weight) { font-weight: map-get($meow-typo-style, base-weight); }
 }
 
-@if map-get($kittn-activate, hyphens) == true {
+@if map-get($meow-activate, hyphens) == true {
   abbr, acronym, code, dir, kbd,
   listing, plaintext, q, samp, tt, var, xmp {
     hyphens: none;
@@ -84,7 +84,7 @@ audio, progress, canvas, video {
 }
 
 body, button, input, select, textarea, .sg-body {
-  font-family: map-get($kittn-typo-style, base-font);
+  font-family: map-get($meow-typo-style, base-font);
 }
 
 audio:not([controls]) {
@@ -119,40 +119,40 @@ select, option, button, a, input[type="button"],input[type="reset"],input[type="
 */
 %heading {
   text-rendering: optimizeLegibility;
-  @if map-get($kittn-global-heading,texttransform) != false {
-    text-transform: map-get($kittn-global-heading,texttransform);
+  @if map-get($meow-global-heading,texttransform) != false {
+    text-transform: map-get($meow-global-heading,texttransform);
   }
 
-  @if map-get($kittn-global-heading,lineheight) != false {
-    @if map-get($kittn-global-heading,lineheight) == d {
+  @if map-get($meow-global-heading,lineheight) != false {
+    @if map-get($meow-global-heading,lineheight) == d {
       line-height: 1.25;
 
     } @else {
-      @include lineheight(map-get($kittn-global-heading,lineheight));
+      @include lineheight(map-get($meow-global-heading,lineheight));
     }
   }
 
-  @if map-get($kittn-global-heading,marginbottom) != false {
-    @include marginbottom(map-get($kittn-global-heading,marginbottom));
+  @if map-get($meow-global-heading,marginbottom) != false {
+    @include marginbottom(map-get($meow-global-heading,marginbottom));
   }
 
-  @if map-get($kittn-global-heading,fontweight) != false {
-    font-weight: map-get($kittn-global-heading,fontweight);
+  @if map-get($meow-global-heading,fontweight) != false {
+    font-weight: map-get($meow-global-heading,fontweight);
   }
 
-  @if map-get($kittn-typo-style, heading-font) != false OR map-get($kittn-color-route, headline) != false {
-    @if map-get($kittn-typo-style, heading-font) != false {
-      font-family: map-get($kittn-typo-style, heading-font);
+  @if map-get($meow-typo-style, heading-font) != false OR map-get($meow-color-route, headline) != false {
+    @if map-get($meow-typo-style, heading-font) != false {
+      font-family: map-get($meow-typo-style, heading-font);
     }
 
-    @if map-get($kittn-color-route, headline) != false {
-      color: map-get($kittn-color-route, headline);
+    @if map-get($meow-color-route, headline) != false {
+      color: map-get($meow-color-route, headline);
     }
   }
 }
 
 // Generate Fontsizes
-@if $kittn-generate-typostyles { @include typogenerator; }
+@if $meow-generate-typostyles { @include typogenerator; }
 
 
 /*
@@ -175,18 +175,18 @@ select, option, button, a, input[type="button"],input[type="reset"],input[type="
   Styleguide 1.2.1
 */
 .header-stack {
-  @if map-get($kittn-global-heading,marginbottom) != false {
-    @include marginbottom(map-get($kittn-global-heading,marginbottom));
+  @if map-get($meow-global-heading,marginbottom) != false {
+    @include marginbottom(map-get($meow-global-heading,marginbottom));
   }
 
   > * {
     margin-bottom: 0
   }
 
-  @if map-get($kittn-typo-margin,top) > 0 {
+  @if map-get($meow-typo-margin,top) > 0 {
 
     p + & {
-      @include margintop(map-get($kittn-typo-margin, top));
+      @include margintop(map-get($meow-typo-margin, top));
     }
   }
 }
@@ -208,11 +208,11 @@ select, option, button, a, input[type="button"],input[type="reset"],input[type="
 */
 p {
 
-  @include marginbottom(map-get($kittn-typo-margin, bottom));
+  @include marginbottom(map-get($meow-typo-margin, bottom));
 
-  @if map-get($kittn-typo-margin,top) > 0 {
+  @if map-get($meow-typo-margin,top) > 0 {
     + h1, + h2, + h3, + h4, + h5, + h6 {
-      @include margintop(map-get($kittn-typo-margin, bottom) * 1.8);
+      @include margintop(map-get($meow-typo-margin, bottom) * 1.8);
     }
   }
 }
@@ -236,9 +236,9 @@ a {
   // outline: 0;
   line-height: inherit;
   background: transparent;
-  color: map-get($kittn-color-route,link);
+  color: map-get($meow-color-route,link);
 
-  @if map-get($kittn-typo-style,link-decoration) {
+  @if map-get($meow-typo-style,link-decoration) {
     text-decoration: underline;
   } @else {
     text-decoration: none;
@@ -246,9 +246,9 @@ a {
 
   &:hover,
   &.link-hover {
-    color: map-get($kittn-color-route,link-hover);
+    color: map-get($meow-color-route,link-hover);
 
-    @if map-get($kittn-typo-style,link-decoration-hover) {
+    @if map-get($meow-typo-style,link-decoration-hover) {
       text-decoration: underline;
     } @else {
       text-decoration: none;
@@ -257,7 +257,7 @@ a {
 
   &:active,
   &.is-active {
-    color: map-get($kittn-color-route,link-active);
+    color: map-get($meow-color-route,link-active);
   }
 
   /*Disable :focus on elements affects the accessibility  of interfaces.
@@ -286,9 +286,9 @@ a {
   Styleguide 1.2.4
 */
 strong {
-  @if map-get($kittn-typo-style,bold-weight) { font-weight: map-get($kittn-typo-style,bold-weight); }
+  @if map-get($meow-typo-style,bold-weight) { font-weight: map-get($meow-typo-style,bold-weight); }
 
-  @if map-get($kittn-typo-style,bold-font) { font-family: map-get($kittn-typo-style,bold-font); }
+  @if map-get($meow-typo-style,bold-font) { font-family: map-get($meow-typo-style,bold-font); }
 }
 
 /*
@@ -307,9 +307,9 @@ strong {
   Styleguide 1.2.5
 */
 em, dfn {
-  @if map-get($kittn-typo-style,italic-style) { font-style: map-get($kittn-typo-style,italic-style); }
+  @if map-get($meow-typo-style,italic-style) { font-style: map-get($meow-typo-style,italic-style); }
 
-  @if map-get($kittn-typo-style,italic-font) != false { font-family: map-get($kittn-typo-style,italic-font); }
+  @if map-get($meow-typo-style,italic-font) != false { font-family: map-get($meow-typo-style,italic-font); }
 }
 
 /*
@@ -357,8 +357,8 @@ abbr {
   Styleguide 1.2.7
 */
 mark, .hightlight, ::selection {
-  background: map-get($kittn-color-route,highlight-bg);
-  color: map-get($kittn-color-route,hightlight-text);
+  background: map-get($meow-color-route,highlight-bg);
+  color: map-get($meow-color-route,hightlight-text);
 }
 
 
@@ -391,9 +391,9 @@ mark, .hightlight, ::selection {
   Styleguide 1.2.8
 */
 ul,dl {
-  list-style-type: map-get($kittn-typo-sizes,list-style);
-  padding-left: map-get($kittn-typo-sizes,list-margin) + 0px;
-  @include marginbottom(map-get($kittn-typo-margin,bottom));
+  list-style-type: map-get($meow-typo-sizes,list-style);
+  padding-left: map-get($meow-typo-sizes,list-margin) + 0px;
+  @include marginbottom(map-get($meow-typo-margin,bottom));
 
   nav & {
     list-style-type: none;
@@ -403,17 +403,17 @@ ul,dl {
 }
 
 ol {
-  padding-left: map-get($kittn-typo-sizes,list-margin) + 2px;
-  @include marginbottom(map-get($kittn-typo-margin,bottom));
+  padding-left: map-get($meow-typo-sizes,list-margin) + 2px;
+  @include marginbottom(map-get($meow-typo-margin,bottom));
 }
 
 li, dt, dd {
-  @if map-get($kittn-typo-sizes,list-fontsize) != false {
-    @include fontsize(map-get($kittn-typo-sizes,list-fontsize));
+  @if map-get($meow-typo-sizes,list-fontsize) != false {
+    @include fontsize(map-get($meow-typo-sizes,list-fontsize));
   }
 
-  @if map-get($kittn-typo-sizes,list-lineheight) != false {
-    line-height: map-get($kittn-typo-sizes,list-lineheight);
+  @if map-get($meow-typo-sizes,list-lineheight) != false {
+    line-height: map-get($meow-typo-sizes,list-lineheight);
   }
 }
 
@@ -443,16 +443,16 @@ dt, dd {
   Styleguide 1.2.9
 */
 hr {
-  @include marginbottom(map-get($kittn-typo-margin, bottom));
-  height: map-get($kittn-hairline,height) + 0px;
+  @include marginbottom(map-get($meow-typo-margin, bottom));
+  height: map-get($meow-hairline,height) + 0px;
   border-left: 0;
   border-bottom: 0;
   border-right: 0;
-  border-top: (map-get($kittn-hairline,height) + 0px) map-get($kittn-hairline,style) map-get($kittn-hairline,color);
+  border-top: (map-get($meow-hairline,height) + 0px) map-get($meow-hairline,style) map-get($meow-hairline,color);
   position: relative;
 
-  @if map-get($kittn-typo-margin,top) > 0 {
-    @include margintop(map-get($kittn-typo-margin,bottom)); }
+  @if map-get($meow-typo-margin,top) > 0 {
+    @include margintop(map-get($meow-typo-margin,bottom)); }
 }
 
 /*
@@ -475,20 +475,20 @@ hr {
   Styleguide 1.2.10
 */
 code, kbd, pre, samp {
-  @if map-get($kittn-typo-sizes, code-fontsize) != false {
-    @include fontsize(map-get($kittn-typo-sizes, code-fontsize));
+  @if map-get($meow-typo-sizes, code-fontsize) != false {
+    @include fontsize(map-get($meow-typo-sizes, code-fontsize));
   }
 
-  @if map-get($kittn-typo-sizes, code-lineheight) != false {
-    line-height: map-get($kittn-typo-sizes, code-lineheight);
+  @if map-get($meow-typo-sizes, code-lineheight) != false {
+    line-height: map-get($meow-typo-sizes, code-lineheight);
   }
 
-  @if map-get($kittn-typo-style, code-weight) != false {
-    font-weight: map-get($kittn-typo-style, code-weight);
+  @if map-get($meow-typo-style, code-weight) != false {
+    font-weight: map-get($meow-typo-style, code-weight);
   }
 
-  @if map-get($kittn-typo-style, code-font) != false {
-    font-family: map-get($kittn-typo-style, code-font);
+  @if map-get($meow-typo-style, code-font) != false {
+    font-family: map-get($meow-typo-style, code-font);
 
   } @else {
     font-family: monospace, monospace;
@@ -497,7 +497,7 @@ code, kbd, pre, samp {
 
 pre {
   white-space: pre;
-  @include marginbottom(map-get($kittn-typo-margin,bottom));
+  @include marginbottom(map-get($meow-typo-margin,bottom));
 
   > code {
     word-wrap: normal;
@@ -593,27 +593,27 @@ sub {
 blockquote {
   margin-left: 0;
   margin-right: 0;
-  @include marginbottom(map-get($kittn-typo-margin,bottom));
+  @include marginbottom(map-get($meow-typo-margin,bottom));
 
   & p {
-    @if map-get($kittn-typo-sizes,quote-fontsize) != false {
-      @include fontsize(map-get($kittn-typo-sizes,quote-fontsize));
+    @if map-get($meow-typo-sizes,quote-fontsize) != false {
+      @include fontsize(map-get($meow-typo-sizes,quote-fontsize));
     }
 
-    @if map-get($kittn-typo-sizes,quote-lineheight) != false {
-      line-height: map-get($kittn-typo-sizes,quote-lineheight);
+    @if map-get($meow-typo-sizes,quote-lineheight) != false {
+      line-height: map-get($meow-typo-sizes,quote-lineheight);
     }
   }
 
   cite {
     font-style: normal;
 
-    @if map-get($kittn-typo-sizes,cite-fontsize) != false {
-      @include fontsize(map-get($kittn-typo-sizes,cite-fontsize));
+    @if map-get($meow-typo-sizes,cite-fontsize) != false {
+      @include fontsize(map-get($meow-typo-sizes,cite-fontsize));
     }
 
-    @if map-get($kittn-typo-sizes,cite-lineheight) != false {
-      line-height: map-get($kittn-typo-sizes,cite-lineheight);
+    @if map-get($meow-typo-sizes,cite-lineheight) != false {
+      line-height: map-get($meow-typo-sizes,cite-lineheight);
     }
 
     &:before {
@@ -628,20 +628,20 @@ blockquote {
 }
 
 blockquote, q, cite {
-  @if map-get($kittn-typo-style, quote-font) != false {
-    font-family: map-get($kittn-typo-style, quote-font);
+  @if map-get($meow-typo-style, quote-font) != false {
+    font-family: map-get($meow-typo-style, quote-font);
   }
 
-  @if map-get($kittn-typo-style, quote-weight) != false {
-    font-weight: map-get($kittn-typo-style, quote-weight);
+  @if map-get($meow-typo-style, quote-weight) != false {
+    font-weight: map-get($meow-typo-style, quote-weight);
   }
 
-  @if map-get($kittn-typo-style, quote-style) != false {
-    font-style: map-get($kittn-typo-style, quote-style);
+  @if map-get($meow-typo-style, quote-style) != false {
+    font-style: map-get($meow-typo-style, quote-style);
   }
 
-  @if map-get($kittn-color-route, blockquote) != false {
-    color: map-get($kittn-color-route, blockquote);
+  @if map-get($meow-color-route, blockquote) != false {
+    color: map-get($meow-color-route, blockquote);
   }
 }
 

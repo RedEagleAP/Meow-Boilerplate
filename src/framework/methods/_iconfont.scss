@@ -17,10 +17,10 @@
 ///     }
 ///   }
 @function icon($name) {
-  @if map-has-key($kittn-font-icons,$name) {
-    @return map-get($kittn-font-icons,$name);
+  @if map-has-key($meow-font-icons,$name) {
+    @return map-get($meow-font-icons,$name);
   } @else {
-    @warn 'The Icon "#{$name}" is not available! Possible Icons: #{map-keys($kittn-font-icons)}';
+    @warn 'The Icon "#{$name}" is not available! Possible Icons: #{map-keys($meow-font-icons)}';
   }
 }
 
@@ -89,8 +89,8 @@
 ///     content: attr(data-icon);
 ///   }
 @mixin icon-font-base($iconFontName) {
-  [class^="#{map-get($kittn-iconfont, prefix)}#{map-get($kittn-bem, modifier)}"],
-  [class*=" #{map-get($kittn-iconfont, prefix)}#{map-get($kittn-bem, modifier)}"],
+  [class^="#{map-get($meow-iconfont, prefix)}#{map-get($meow-bem, modifier)}"],
+  [class*=" #{map-get($meow-iconfont, prefix)}#{map-get($meow-bem, modifier)}"],
   [data-icon],
   %iconfont {
     &:before {
@@ -156,5 +156,5 @@
 ///     @include ext-icon(myIcon);
 ///   }
 @mixin ext-icon($name) {
-  @extend .#{map-get($kittn-iconfont, prefix)}#{map-get($kittn-bem, modifier)}#{$name};
+  @extend .#{map-get($meow-iconfont, prefix)}#{map-get($meow-bem, modifier)}#{$name};
 }

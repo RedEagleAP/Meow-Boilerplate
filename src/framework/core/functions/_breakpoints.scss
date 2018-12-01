@@ -13,7 +13,7 @@
 ///
 /// @example scss
 ///   @media screen and (min-width: bp(2) ){ ... }
-@function bp($target, $entries: $kittn-breakpoint-map) {
+@function bp($target, $entries: $meow-breakpoint-map) {
 
   // Pick the Values
   @if map-has-key($entries,$target) {

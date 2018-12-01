@@ -6,8 +6,8 @@
 ///
 /// @group generators
 ///
-/// @param  {map}    $icons [$kittn-font-icons] - Icon Font Map
-@mixin icon-generator($icons: $kittn-font-icons) {
+/// @param  {map}    $icons [$meow-font-icons] - Icon Font Map
+@mixin icon-generator($icons: $meow-font-icons) {
   // Add Counter
   $counter: 1;
 
@@ -24,7 +24,7 @@
   Icon: #{$name}
 
   markup:
-  <i class="#{map-get($kittn-iconfont, prefix)}#{map-get($kittn-bem, modifier)}#{$name}"></i>
+  <i class="#{map-get($meow-iconfont, prefix)}#{map-get($meow-bem, modifier)}#{$name}"></i>
 
   sg-wrapper:
   <div class="sg-body">
@@ -33,7 +33,7 @@
 
   Styleguide 1.9.#{$counter}
 */
-    .#{map-get($kittn-iconfont, prefix)}#{map-get($kittn-bem, modifier)}#{$name}:before {
+    .#{map-get($meow-iconfont, prefix)}#{map-get($meow-bem, modifier)}#{$name}:before {
       content: $icon;
     }
   }

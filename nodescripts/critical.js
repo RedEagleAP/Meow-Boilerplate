@@ -2,19 +2,17 @@ const path = require('path')
 const argv = require('yargs').argv
 const critical = require('critical')
 const chalk = require('chalk')
-const kittn = require('../config.json')
+const meow = require('../config.json')
 
-doSynchronousLoop(kittn.cssabove.sites, processCriticalCss, () => {
+doSynchronousLoop(meow.cssabove.sites, processCriticalCss, () => {
   console.log(chalk`{green Done!}`)
 })
 
 function processCriticalCss(element, i, callback) {
-  const url = argv.url || kittn.cssabove.url
+  const url = argv.url || meow.cssabove.url
   const criticalSrc = `${url}${element.url}`
   const BASE_PATH = path.resolve(__dirname, '..')
-  const criticalDest = `${`${BASE_PATH}/${kittn.src.templates}${
-    element.template
-  }`}_critical.min.css`
+  const criticalDest = `${`${BASE_PATH}/${meow.src.templates}${element.template}`}_critical.min.css`
   console.log(
     `-> Generating critical CSS: ${chalk.cyan(criticalSrc)} -> ${chalk.magenta(criticalDest)}`,
   )
@@ -23,13 +21,13 @@ function processCriticalCss(element, i, callback) {
     .generate({
       src: criticalSrc,
       dest: criticalDest,
-      inline: kittn.cssabove.inline,
-      ignore: kittn.cssabove.ignore,
-      include: kittn.cssabove.include,
-      css: [kittn.dist.css + kittn.cssabove.cssfile],
-      minify: kittn.cssabove.minify,
-      height: kittn.cssabove.height,
-      width: kittn.cssabove.width,
+      inline: meow.cssabove.inline,
+      ignore: meow.cssabove.ignore,
+      include: meow.cssabove.include,
+      css: [meow.dist.css + meow.cssabove.cssfile],
+      minify: meow.cssabove.minify,
+      height: meow.cssabove.height,
+      width: meow.cssabove.width,
     })
     .then((output) => {
       console.log(chalk`-> Critical CSS generated: {green ${element.template}_critical.min.css}`)

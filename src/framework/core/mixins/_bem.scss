@@ -27,7 +27,7 @@
 ///   }
 @mixin element($name) {
   @at-root {
-    &#{map-get($kittn-bem, element)}#{$name} {
+    &#{map-get($meow-bem, element)}#{$name} {
       @content;
     }
   }
@@ -59,7 +59,7 @@
 ///   }
 @mixin modifier($name, $extend: false) {
   @at-root {
-    &#{map-get($kittn-bem, modifier)}#{$name} {
+    &#{map-get($meow-bem, modifier)}#{$name} {
       @content;
     }
   }
@@ -94,7 +94,7 @@
   $e: &;
 
   @at-root {
-    &#{map-get($kittn-bem, instance)}#{$name} {
+    &#{map-get($meow-bem, instance)}#{$name} {
       // Extend with the Parent Element
       @extend #{$e};
       @content;
@@ -163,7 +163,7 @@
   $parent: str-slice('#{$p}',2,str-length('#{$p}'));
 
   @at-root {
-    [class^="#{$parent}"][class*="#{map-get($kittn-bem, modifier)}#{$name}"] {
+    [class^="#{$parent}"][class*="#{map-get($meow-bem, modifier)}#{$name}"] {
       @content;
     }
   }

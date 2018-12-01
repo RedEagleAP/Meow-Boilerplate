@@ -5,26 +5,26 @@
 // Global spacing unit, used for Spacer and Lines Mixins.
 //
 // @type Number
-$kittn-global-spacing: 20;
+$meow-global-spacing: 20;
 
 // Default unit for unitless values.
 //
 // @type Number
-$kittn-default-unit: px;
+$meow-default-unit: px;
 
 // BEM Prefixes for Elements and Modifiers
 //
 // @type Map
-$kittn-bem: (
+$meow-bem: (
   element: '__',
   modifier: '--',
   instance: '---'
 );
 
-// Kittn Directory Organisation
+// meow Directory Organisation
 //
 // @type Map
-$kittn-directories: (
+$meow-directories: (
   fonts: '../fonts/',
   images: '../img/',
   svgonly: '../img/svgfiles/',
@@ -33,7 +33,7 @@ $kittn-directories: (
   vector: 'svgfiles/'
 );
 
-$kittn-spritefiles: (
+$meow-spritefiles: (
   bitmap-sprite: 'sprite.png',
   vector-sprite: 'vector-sprite.svg'
 );
@@ -48,7 +48,7 @@ $kittn-spritefiles: (
 // - 'mobile-first' {Bool} - Grid and Breakpoints oriented from Smallest to Biggest Size
 //
 // @type Map
-$kittn-activate: (
+$meow-activate: (
   debugging: false,
   box-sizing: true,
   baseline: false,

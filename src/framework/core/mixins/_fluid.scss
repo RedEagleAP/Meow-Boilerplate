@@ -42,7 +42,7 @@
     #{$property}: $min-value;
   }
 
-  @if map-get($kittn-typo, mqunit) == em {
+  @if map-get($meow-typo, mqunit) == em {
     $min-vw: em($min-vw);
     $max-vw: em($max-vw);
   }

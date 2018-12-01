@@ -8,10 +8,10 @@
 ///
 /// @access private
 @function rembase() {
-  @if map-get($kittn-typo, unit) == rem {
+  @if map-get($meow-typo, unit) == rem {
     @return 16;
   } @else {
-    @return 16 / 100 * map-get($kittn-typo, base-scale);
+    @return 16 / 100 * map-get($meow-typo, base-scale);
   }
 }
 

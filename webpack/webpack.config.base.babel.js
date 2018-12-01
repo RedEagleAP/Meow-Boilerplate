@@ -37,9 +37,9 @@ export default {
   stats: 'none',
   resolve: {
     extensions: ['.js'],
-    modules: [utils.resolve(utils.kittnConf.src.base), utils.resolve('node_modules')],
+    modules: [utils.resolve(utils.meowConf.src.base), utils.resolve('node_modules')],
     alias: {
-      src: utils.resolve(utils.kittnConf.src.base),
+      src: utils.resolve(utils.meowConf.src.base),
     },
   },
   module: {
@@ -53,11 +53,11 @@ export default {
           formatter: require('eslint-friendly-formatter'),
         },
         exclude: /node_modules/,
-        include: utils.resolve(utils.kittnConf.src.base),
+        include: utils.resolve(utils.meowConf.src.base),
       },
       {
         test: /\.js$/,
-        include: utils.resolve(utils.kittnConf.src.base),
+        include: utils.resolve(utils.meowConf.src.base),
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -80,7 +80,7 @@ export default {
 
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: utils.kittnConf.src.structure + 'index.html',
+      template: utils.meowConf.src.structure + 'index.html',
       inject: true,
       hash: false,
       minify: {

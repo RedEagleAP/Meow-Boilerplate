@@ -10,7 +10,7 @@
 /// @requires {mixin} fontface
 ///
 /// @param  {map}    $map - Map
-@mixin fontface-generator($map: $kittn-fontface-map ) {
+@mixin fontface-generator($map: $meow-fontface-map ) {
   // Add Counter
   $counter: 1;
 

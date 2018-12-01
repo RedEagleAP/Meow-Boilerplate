@@ -19,7 +19,7 @@
 ///   .test {
 ///     font-size: 0.875em;
 ///   }
-@function em($px, $base: map-get($kittn-typo, base-size)) {
+@function em($px, $base: map-get($meow-typo, base-size)) {
   @if unitless($px) {
     @return #{$px / $base}em;
 

@@ -11,7 +11,7 @@
   $list: ();
 
   // Move Values in a list
-  @each $name, $entry in $kittn-breakpoint-map {
+  @each $name, $entry in $meow-breakpoint-map {
     @if map-get($entry, fontsize) != false {
       $list: append($list, (map-get($entry,size) map-get($entry, fontsize)), comma);
     }
@@ -21,7 +21,7 @@
   $list: sl-remove-duplicates($list);
 
   // Sort the List
-  @if map-get($kittn-activate, mobile-first) != true { $list: sl-reverse($list); }
+  @if map-get($meow-activate, mobile-first) != true { $list: sl-reverse($list); }
 
   font-size: strip-units($base) + 0%;
   // Build the Stepped Width
@@ -29,11 +29,11 @@
     $l: nth($list,$i);
     $size: nth($l,1);
 
-    @if map-get($kittn-typo, mqunit) == em {
+    @if map-get($meow-typo, mqunit) == em {
       $size: em($size);
     }
 
-    @media screen and (if(map-get($kittn-activate, mobile-first),min-width,max-width): $size) {
+    @media screen and (if(map-get($meow-activate, mobile-first),min-width,max-width): $size) {
       font-size: nth($l,2) + 0%;
     }
   }

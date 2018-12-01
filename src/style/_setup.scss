@@ -6,7 +6,7 @@
 // Set on false
 //
 // @type {bool | number }                   - Set to false if you do not want responsive fontsizes
-$kittn-active-responsive-fonts: 85;
+$meow-active-responsive-fonts: 85;
 
 // Map with all breakpoints and related behavior
 //
@@ -16,7 +16,7 @@ $kittn-active-responsive-fonts: 85;
 // @prop {number} base.key.size             - The width that activate the Trigger
 // @prop {bool}   base.key.step             - Set the threshold for the grid-stepper mixin
 // @prop {number} base.key.fontsize         - Rewrite the Basefontsize for this breakpoint
-$kittn-breakpoint-map: (
+$meow-breakpoint-map: (
   'xs': (
     size: 320px,
     step: true,
@@ -62,7 +62,7 @@ $kittn-breakpoint-map: (
 /// @prop {map}    footer             - Footerstyles
 /// @prop {map}    footer.breaksizes  - Footer Breakpoints
 /// @prop {number} footer.font-size   - Base footer fontsize in px
-$kittn-globals: (
+$meow-globals: (
   pagesize: (
     min: 320px,
     max: 1200px
@@ -94,7 +94,7 @@ $kittn-globals: (
 // @prop {string} base.fontname.variant.weight   - Associated Fontweight
 // @prop {string} base.fontname.variant.style    - Associated Fontstyle
 // @prop {bool}   base.fontname.variant.short    - Use the Short Syntax for Fontfaces (Use not when Support => IE8 or Android => 4.3)
-$kittn-fontface-map: (
+$meow-fontface-map: (
   // EXAMPLE
   // fontname: (
   //   1: (
@@ -116,7 +116,7 @@ $kittn-fontface-map: (
 //
 // @prop {string} base.name                 - Iconfont Name
 // @prop {string} base.prefix               - Icon Prefix
-$kittn-iconfont: (
+$meow-iconfont: (
   name: false,
   prefix: 'f-icon'
 );
@@ -129,7 +129,7 @@ $kittn-iconfont: (
 // @prop {number} base.base-scale           - Fontsize on `<html>`
 // @prop {number} base.base-size            - Base Fontsize in `px`
 // @prop {number} base.line-height          - Base Line-Height
-$kittn-typo: (
+$meow-typo: (
   unit: rem,
   mqunit: em,
   base-scale: 85,
@@ -144,7 +144,7 @@ $kittn-typo: (
 //
 // @prop {number} base.top                 - Top Margin Size
 // @prop {number} base.bottom              - Bottom Margin Size
-$kittn-typo-margin: (
+$meow-typo-margin: (
   top: gap(1.25),
   bottom: gap(1)
 );
@@ -167,7 +167,7 @@ $kittn-typo-margin: (
 // @prop {string|bool} base.quote-style           - Quote font style
 // @prop {string|bool} base.code-font             - Font for Code
 // @prop {string|bool} base.code-weight           - Font weight for Code typo
-$kittn-typo-style: (
+$meow-typo-style: (
   base-font: ff('helvetica'),
   base-weight: false,
   heading-font: false,
@@ -198,15 +198,15 @@ $kittn-typo-style: (
 // @prop {number|bool} base.cite-lineheight   - Lineheight for Cite
 // @prop {number|bool} base.code-fontsize     - Fontsize for Code Typo
 // @prop {number|bool} base.code-lineheight   - Lineheight for Code Typo
-$kittn-typo-sizes: (
+$meow-typo-sizes: (
   list-fontsize: false,
   list-lineheight: false,
   list-margin: gap(1),
   list-style: disc,
-  quote-fontsize: map-get($kittn-typo, base-size) + 2,
-  quote-lineheight: map-get($kittn-typo, line-height),
-  cite-fontsize: map-get($kittn-typo, base-size) - 1,
-  cite-lineheight: map-get($kittn-typo, line-height),
+  quote-fontsize: map-get($meow-typo, base-size) + 2,
+  quote-lineheight: map-get($meow-typo, line-height),
+  cite-fontsize: map-get($meow-typo, base-size) - 1,
+  cite-lineheight: map-get($meow-typo, line-height),
   code-fontsize: false,
   code-lineheight: false
 );
@@ -219,7 +219,7 @@ $kittn-typo-sizes: (
 // @prop {number|bool} base.marginbottom   - Bottom Margin
 // @prop {number|bool} base.fontweight     - Heading Fontweight
 // @prop {number|bool} base.texttransform  - Global Texttransform for headings
-$kittn-global-heading: (
+$meow-global-heading: (
   lineheight: false,
   marginbottom: 0,
   fontweight: false,
@@ -239,7 +239,7 @@ $kittn-global-heading: (
 // @prop {number|bool} base.type.font-weight   - Fontweight
 // @prop {bool}        base.type.tag           - If it is activated, it generates a class from Key
 // @prop {string|bool} base.type.extend        - The definition can be linked to a global definition
-$kittn-typostyles-map: (
+$meow-typostyles-map: (
   h1: (
     font-size: 36,
     line-height: d,
@@ -295,7 +295,7 @@ $kittn-typostyles-map: (
 // Generate all Fontstyles with classes
 //
 // @type Bool
-$kittn-generate-typostyles: true;
+$meow-generate-typostyles: true;
 
 // Definition of colors in the frontend. Additional variants can be added to the respective color group.
 //
@@ -304,7 +304,7 @@ $kittn-generate-typostyles: true;
 // @prop {map}         base.type               - Colorgroup
 // @prop {map}         base.type.color         - Main Color Value
 
-$kittn-color-map: (
+$meow-color-map: (
   'primary': (
     color: #29b8f2
   ),
@@ -391,7 +391,7 @@ $kittn-color-map: (
 // @prop {color|bool}  base.link               - Link color
 // @prop {color|bool}  base.link-hover         - Link hover color
 // @prop {color|bool}  base.link-active        - Link active color
-$kittn-color-route: (
+$meow-color-route: (
   body: c('body'),
   text: c('main'),
   headline: c('gray'),
@@ -410,7 +410,7 @@ $kittn-color-route: (
 // @prop {color}       base.height             - Hairline height
 // @prop {color}       base.style              - Line style
 // @prop {color}       base.color              - Body background color
-$kittn-hairline: (
+$meow-hairline: (
   height: 1,
   style: dashed,
   color: c('darkwhite')
@@ -427,7 +427,7 @@ $kittn-hairline: (
 // @prop {number}      base.margin             - Table margin
 // @prop {number}      base.padding            - Tablecell padding
 // @prop {number}      base.trigger            - Trigger Size for responsive Tables
-$kittn-tables: (
+$meow-tables: (
   background: transparent,
   background-zebra: tint(c(primary), 20),
   background-hover: lighten(c(primary), 20),

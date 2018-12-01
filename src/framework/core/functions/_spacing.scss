@@ -8,7 +8,7 @@
 ///
 /// @param  {number} $lines                        - Multiplier for spacing
 /// @param  {bool}   $hard [false]                 - Include an !important
-/// @param  {number} $size [$kittn-global-spacing] - Connection to the Base Spacing
+/// @param  {number} $size [$meow-global-spacing] - Connection to the Base Spacing
 ///
 /// @return {number}
 ///
@@ -21,7 +21,7 @@
 ///   .space {
 ///     margin-bottom: 40px;
 ///   }
-@function s($lines, $hard: false, $size: $kittn-global-spacing) {
+@function s($lines, $hard: false, $size: $meow-global-spacing) {
   @if is-number($lines) {
     $u: unit-check(0);
     @return strip-units($lines) * if(unitless($size), $size + $u, $size) if($hard,!important,null);
@@ -38,7 +38,7 @@
 /// @param  {number} $lines                        - Multiplier for Spacing
 /// @param  {bool}   $imp [false]                  - For including an !important
 /// @param  {*}      $u [false]                    - Unit
-/// @param  {number} $size [$kittn-global-spacing] - Connection to the Base Spacing
+/// @param  {number} $size [$meow-global-spacing] - Connection to the Base Spacing
 ///
 /// @return {number}
 ///
@@ -51,7 +51,7 @@
 ///   .space {
 ///     margin-bottom: 5em;
 ///   }
-@function gap($lines, $imp: false, $u: false, $size: $kittn-global-spacing) {
+@function gap($lines, $imp: false, $u: false, $size: $meow-global-spacing) {
   @if type-of($lines) == 'number' {
 
     // When other unittype is used

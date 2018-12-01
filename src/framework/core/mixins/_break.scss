@@ -15,12 +15,12 @@
 /// @access private
 @mixin _breakmode($size, $mode, $dimension) {
   @if $mode == max {
-    $size: if(map-get($kittn-activate, mobile-first) == true, $size + 1, $size);
+    $size: if(map-get($meow-activate, mobile-first) == true, $size + 1, $size);
   } @else {
-    $size: if(map-get($kittn-activate, mobile-first) == true, $size, $size + 1);
+    $size: if(map-get($meow-activate, mobile-first) == true, $size, $size + 1);
   }
 
-  @if map-get($kittn-typo, mqunit) == em {
+  @if map-get($meow-typo, mqunit) == em {
     $size: em($size);
   }
 
@@ -48,8 +48,8 @@
   $size-max: if($size-2 > $size-1, $size-2, $size-1);
 
   // Modify Size for mobile-first
-  $size-min: if(map-get($kittn-activate, mobile-first), $size-min, $size-min + 1);
-  $size-max: if(map-get($kittn-activate, mobile-first), $size-max + 1, $size-max);
+  $size-min: if(map-get($meow-activate, mobile-first), $size-min, $size-min + 1);
+  $size-max: if(map-get($meow-activate, mobile-first), $size-max + 1, $size-max);
 
   // Insert the Media Query
   @media screen and (min-#{if($dimension == width, width, height)}: $size-min) and (max-#{if($dimension == width, width, height)}: $size-max) {
@@ -64,7 +64,7 @@
 ///
 /// @param  {*}      $target                       - Required Breakpoint (from map)
 /// @param  {string} $mode [auto]                  - Media Query Mode. (max, min, auto)
-/// @param  {map}    $list [$kittn-breakpoint-map] - Connection to the Breakpoint Map
+/// @param  {map}    $list [$meow-breakpoint-map] - Connection to the Breakpoint Map
 /// @param  {string} $dimension                    - Dimension [default: width]
 ///
 /// @content [Style declatation inside the Media Bubble]
@@ -103,7 +103,7 @@
 ///   @media screen and (min-width: 480px) and (max-width: 961px) {
 ///     .between {
 ///       display: block; } }
-@mixin break($target, $mode: auto, $list: $kittn-breakpoint-map, $dimension: width) {
+@mixin break($target, $mode: auto, $list: $meow-breakpoint-map, $dimension: width) {
   // Check Target values
   @if length($target) > 2 {
     @warn 'You can not use more than two target Values on the Breakpoint';

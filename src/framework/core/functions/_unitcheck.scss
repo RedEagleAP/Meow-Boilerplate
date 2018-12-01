@@ -60,10 +60,10 @@
 ///   }
 @function unit-check($value) {
   @if unitless($value) {
-    @if $kittn-default-unit == rem {
+    @if $meow-default-unit == rem {
       @return $value + 0rem;
 
-    } @else if $kittn-default-unit == em {
+    } @else if $meow-default-unit == em {
       @return $value + 0em;
 
     } @else {

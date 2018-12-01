@@ -171,7 +171,7 @@ $spacer-options: (
 /// @param {List}   $options                      - Spacing Type (w, h, lh, pt, pb, pl, pr, mt, mb, ml, mr, mv, mh, pv, ph)
 /// @param {Number} $lines [1]                    - Spacing Multiplicator
 /// @param {Bool}   $important [false]            - Overwrite Values with !important
-/// @param {Number} $size [$kittn-global-spacing] - Global Size Value
+/// @param {Number} $size [$meow-global-spacing] - Global Size Value
 ///
 /// @example scss - scss
 ///   .box {
@@ -184,7 +184,7 @@ $spacer-options: (
 ///     margin-bottom: 20px;
 ///     height: 200px;
 ///   }
-@mixin spacer($options, $lines: 1, $important: false, $size: $kittn-global-spacing) {
+@mixin spacer($options, $lines: 1, $important: false, $size: $meow-global-spacing) {
 
   // Remove Duplicates
   $o: sl-remove-duplicates($options);

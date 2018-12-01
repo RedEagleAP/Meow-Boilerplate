@@ -4,11 +4,11 @@
 
 table {
   max-width: 100%;
-  @if map-get($kittn-tables, margin) != false {
-      margin-bottom: map-get($kittn-tables, margin);
+  @if map-get($meow-tables, margin) != false {
+      margin-bottom: map-get($meow-tables, margin);
     }
-  @if map-get($kittn-tables, background) != false {
-    background-color: map-get($kittn-tables, background);
+  @if map-get($meow-tables, background) != false {
+    background-color: map-get($meow-tables, background);
   }
 }
 
@@ -18,28 +18,28 @@ th {
 
 .table {
   width: 100%;
-  @if map-get($kittn-tables, margin) != false {
-    margin-bottom: map-get($kittn-tables, margin);
+  @if map-get($meow-tables, margin) != false {
+    margin-bottom: map-get($meow-tables, margin);
   }
 
   > thead, > tbody, > tfoot {
     > tr {
       > th, > td {
-        @if map-get($kittn-tables, padding) != false {
-          padding: map-get($kittn-tables, padding);
+        @if map-get($meow-tables, padding) != false {
+          padding: map-get($meow-tables, padding);
         }
-        @include lineheight(map-get($kittn-typo, line-height));
+        @include lineheight(map-get($meow-typo, line-height));
         vertical-align: top;
-        @if map-get($kittn-tables, border-color) != false {
-          border-top: 1px solid map-get($kittn-tables, border-color);
+        @if map-get($meow-tables, border-color) != false {
+          border-top: 1px solid map-get($meow-tables, border-color);
         }
       }
     }
   }
   > thead > tr > th {
     vertical-align: bottom;
-    @if map-get($kittn-tables, border-color) != false {
-      border-bottom: 2px solid map-get($kittn-tables, border-color);
+    @if map-get($meow-tables, border-color) != false {
+      border-bottom: 2px solid map-get($meow-tables, border-color);
     }
   }
   > caption + thead, > colgroup + thead, > thead:first-child {
@@ -49,22 +49,22 @@ th {
       }
     }
   }
-  @if map-get($kittn-tables, border-color) != false {
+  @if map-get($meow-tables, border-color) != false {
     > tbody + tbody {
-      border-top: 2px solid map-get($kittn-tables, border-color);
+      border-top: 2px solid map-get($meow-tables, border-color);
     }
   }
 }
 
 
 // ---- Bordered Tables ----
-@if map-get($kittn-tables, border-color) != false {
+@if map-get($meow-tables, border-color) != false {
   .table-bordered {
-    border: 1px solid map-get($kittn-tables, border-color);
+    border: 1px solid map-get($meow-tables, border-color);
     > thead, > tbody, > tfoot {
       > tr {
         > th, > td {
-          border: 1px solid map-get($kittn-tables, border-color);
+          border: 1px solid map-get($meow-tables, border-color);
         }
       }
     }
@@ -76,38 +76,38 @@ th {
   }
 }
 
-@if map-get($kittn-tables, background-zebra) != false {
+@if map-get($meow-tables, background-zebra) != false {
   .table-zebra {
     > tbody > tr:nth-child(odd) {
       > td, > th {
-        background-color: map-get($kittn-tables, background-zebra);
+        background-color: map-get($meow-tables, background-zebra);
       }
     }
   }
 }
 
-@if map-get($kittn-tables, background-hover) != false  {
+@if map-get($meow-tables, background-hover) != false  {
   .table-hover {
     > tbody, > tr:hover {
       > td, > th {
-        background-color: map-get($kittn-tables, background-hover);
+        background-color: map-get($meow-tables, background-hover);
       }
     }
   }
 }
 
 .responsive-table {
-  @media screen and (max-width: map-get($kittn-tables, trigger)) {
+  @media screen and (max-width: map-get($meow-tables, trigger)) {
     width: 100%;
-    @if map-get($kittn-tables, margin) != false {
-      margin-bottom: map-get($kittn-tables, margin);
+    @if map-get($meow-tables, margin) != false {
+      margin-bottom: map-get($meow-tables, margin);
     }
     overflow-y: hidden;
     overflow-x: scroll;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch;
-    @if map-get($kittn-tables, border-color) != false {
-      border: 1px solid map-get($kittn-tables, border-color);
+    @if map-get($meow-tables, border-color) != false {
+      border: 1px solid map-get($meow-tables, border-color);
     }
 
     > .table {
@@ -121,7 +121,7 @@ th {
         }
       }
     }
-    @if map-get($kittn-tables, border-color) != false {
+    @if map-get($meow-tables, border-color) != false {
       > .table-bordered {
         border: 0;
 
@@ -147,6 +147,3 @@ th {
     }
   }
 }
-
-
-

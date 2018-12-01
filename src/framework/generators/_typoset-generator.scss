@@ -6,8 +6,8 @@
 ///
 /// @group generators
 ///
-/// @param  {map}    $map [$kittn-typostyles-map] - Map
-@mixin typogenerator($map: $kittn-typostyles-map) {
+/// @param  {map}    $map [$meow-typostyles-map] - Map
+@mixin typogenerator($map: $meow-typostyles-map) {
   // Add Counter
   $counter: 1;
 

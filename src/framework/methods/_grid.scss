@@ -3,8 +3,8 @@
 // ===================================================
 
 // Default Vars
-$bem-modifier: map-get($kittn-bem, modifier);
-$mobile-first: map-get($kittn-activate, mobile-first);
+$bem-modifier: map-get($meow-bem, modifier);
+$mobile-first: map-get($meow-activate, mobile-first);
 
 /// Calculate the width from a column in percent
 ///
@@ -100,7 +100,7 @@ $mobile-first: map-get($kittn-activate, mobile-first);
 ///   @media screen and (min-width: 1180px) {
 ///     .container {
 ///       width: 1180px; } }
-@mixin adaptive($map: $kittn-breakpoint-map) {
+@mixin adaptive($map: $meow-breakpoint-map) {
 
   // Add a empty List
   $list: ();

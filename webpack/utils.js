@@ -1,12 +1,12 @@
 import { getIfUtils, removeEmpty } from 'webpack-config-utils'
 import path from 'path'
-import kittnConf from '../config.json'
+import meowConf from '../config.json'
 
 exports.getIfUtils = getIfUtils
 exports.removeEmpty = removeEmpty
 
-exports.kittnConf = kittnConf
-exports.entryPoints = kittnConf.src.jsEntryPoints
+exports.meowConf = meowConf
+exports.entryPoints = meowConf.src.jsEntryPoints
 
 /*
  |--------------------------------------------------------------------------
@@ -15,11 +15,11 @@ exports.entryPoints = kittnConf.src.jsEntryPoints
  */
 const paths = {}
 paths.ROOT_PATH = path.resolve(__dirname, '..')
-paths.PUBLIC_PATH = path.join(paths.ROOT_PATH, kittnConf.dist.webpackpublic)
-paths.ASSETS_PATH = kittnConf.dist.webpackassets
-paths.SRC_ROOT = path.resolve(paths.ROOT_PATH, kittnConf.src.base)
-paths.CSS_ROOT = path.resolve(paths.ROOT_PATH, kittnConf.src.style)
-paths.LOADER_PATH = path.join(paths.ROOT_PATH, kittnConf.src.js)
+paths.PUBLIC_PATH = path.join(paths.ROOT_PATH, meowConf.dist.webpackpublic)
+paths.ASSETS_PATH = meowConf.dist.webpackassets
+paths.SRC_ROOT = path.resolve(paths.ROOT_PATH, meowConf.src.base)
+paths.CSS_ROOT = path.resolve(paths.ROOT_PATH, meowConf.src.style)
+paths.LOADER_PATH = path.join(paths.ROOT_PATH, meowConf.src.js)
 exports.paths = paths
 
 /*

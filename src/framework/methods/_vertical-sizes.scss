@@ -19,12 +19,12 @@
 ///     font-size: 3.9375rem;
 ///   }
 @mixin remsize($arg, $lines) {
-  @if map-get($kittn-typo, unit) == px {
-    #{$arg}: $lines * map-get($kittn-typo, line-height) + 0px;
+  @if map-get($meow-typo, unit) == px {
+    #{$arg}: $lines * map-get($meow-typo, line-height) + 0px;
   }
 
-  @if map-get($kittn-typo, unit) == rem {
-    #{$arg}: rem($lines * map-get($kittn-typo, line-height));
+  @if map-get($meow-typo, unit) == rem {
+    #{$arg}: rem($lines * map-get($meow-typo, line-height));
   }
 }
 
@@ -46,11 +46,11 @@
 ///   }
 @mixin pxsize($arg, $size) {
   @if unitless($size) {
-    @if map-get($kittn-typo, unit) == px {
+    @if map-get($meow-typo, unit) == px {
       #{$arg}: $size + 0px;
     }
 
-    @if map-get($kittn-typo, unit) == rem {
+    @if map-get($meow-typo, unit) == rem {
       #{$arg}: rem($size);
     }
   } @else {
@@ -75,13 +75,13 @@
 ///   .box {
 ///     font-size: 0.875rem;
 ///   }
-@mixin rem($arg, $size, $baseline: map-get($kittn-activate, baseline)) {
+@mixin rem($arg, $size, $baseline: map-get($meow-activate, baseline)) {
   @if unitless($size) {
     $size: strip-units($size);
   }
 
   @if $baseline == true {
-    $lines: ceil($size / map-get($kittn-typo, line-height));
+    $lines: ceil($size / map-get($meow-typo, line-height));
     @include remsize($arg, $lines);
   } @else {
     @include pxsize($arg, $size);
@@ -104,7 +104,7 @@
 ///   .box {
 ///     line-height: 2rem;
 ///   }
-@mixin lineheight($size, $baseline: map-get($kittn-activate, baseline)) {
+@mixin lineheight($size, $baseline: map-get($meow-activate, baseline)) {
   @include rem(line-height, $size, $baseline);
 }
 
@@ -171,7 +171,7 @@
 ///   .box {
 ///     margin-bottom: 1.875rem;
 ///   }
-@mixin marginbottom($size, $baseline: map-get($kittn-activate, baseline)){
+@mixin marginbottom($size, $baseline: map-get($meow-activate, baseline)){
   @include rem(margin-bottom, $size, $baseline);
 }
 
@@ -191,7 +191,7 @@
 ///   .box {
 ///     margin-top: 1.875rem;
 ///   }
-@mixin margintop($size, $baseline: map-get($kittn-activate, baseline)) {
+@mixin margintop($size, $baseline: map-get($meow-activate, baseline)) {
   @include rem(margin-top,$size, $baseline);
 }
 
@@ -211,7 +211,7 @@
 ///   .box {
 ///     margin-left: 1.875rem;
 ///   }
-@mixin marginleft($size, $baseline: map-get($kittn-activate, baseline)) {
+@mixin marginleft($size, $baseline: map-get($meow-activate, baseline)) {
   @include rem(margin-left,$size, $baseline);
 }
 
@@ -231,7 +231,7 @@
 ///   .box {
 ///     margin-right: 1.875rem;
 ///   }
-@mixin marginright($size, $baseline: map-get($kittn-activate, baseline)) {
+@mixin marginright($size, $baseline: map-get($meow-activate, baseline)) {
   @include rem(margin-right,$size, $baseline);
 }
 
@@ -251,7 +251,7 @@
 ///   .box {
 ///     padding-top: 1.875rem;
 ///   }
-@mixin paddingtop($size, $baseline: map-get($kittn-activate, baseline)) {
+@mixin paddingtop($size, $baseline: map-get($meow-activate, baseline)) {
   @include rem(padding-top, $size, $baseline);
 }
 
@@ -271,7 +271,7 @@
 ///   .box {
 ///     padding-bottom: 1.875rem;
 ///   }
-@mixin paddingbottom($size, $baseline: map-get($kittn-activate, baseline)) {
+@mixin paddingbottom($size, $baseline: map-get($meow-activate, baseline)) {
   @include rem(padding-bottom, $size, $baseline);
 }
 
@@ -291,7 +291,7 @@
 ///   .box {
 ///     padding-left: 1.875rem;
 ///   }
-@mixin paddingleft($size, $baseline: map-get($kittn-activate, baseline)) {
+@mixin paddingleft($size, $baseline: map-get($meow-activate, baseline)) {
   @include rem(padding-left, $size, $baseline);
 }
 
@@ -311,7 +311,7 @@
 ///   .box {
 ///     padding-right: 1.875rem;
 ///   }
-@mixin paddingright($size, $baseline: map-get($kittn-activate, baseline)) {
+@mixin paddingright($size, $baseline: map-get($meow-activate, baseline)) {
   @include rem(padding-right, $size, $baseline);
 }
 
@@ -331,8 +331,6 @@
 ///   .box {
 ///     height: 12.5rem;
 ///   }
-@mixin height($size, $baseline: map-get($kittn-activate, baseline)) {
+@mixin height($size, $baseline: map-get($meow-activate, baseline)) {
   @include rem(height, $size, $baseline);
 }
-
-
