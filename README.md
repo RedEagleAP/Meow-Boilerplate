@@ -194,7 +194,7 @@ src/
 ├── images/                           => All Images
 |   ├── bitmapSingle-assets           => Single Bitmap Images
 |   ├── bitmapSprite-assets           => Images for Bitmap Sprites
-|   ├── htmlimages                    => Contents Images (`<img>`)
+|   ├── htmlimages                    => Content Images (`<img>`)
 |   ├── vectorSingle-assets           => Single Vector Images
 |   └── vectorSprite-assets           => Vector Images for Vector Sprites
 ├── js/                               => JS Files (e.g. main.js)
@@ -226,7 +226,7 @@ dist/
 |       ├── system/         => Images like Favicons
 |       ├── bitmaps/        => Bitmap Images
 |       └── svgfiles/       => Vector Images
-├── images/                 => Contents Images
+├── images/                 => Content Images
 ```
 
 If you therefore should not be satisfied, you can change the structure in the `config.json`. When you change, delete the `dist/` Folder, than run the Init Task.
