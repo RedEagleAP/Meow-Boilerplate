@@ -186,6 +186,7 @@ The Gulpfile is modularized and ES8 Compatible (with Babel.js), you will find al
 
 **SRC Folderstructure:**
 
+```bash
 src/
 ├── .system/                          => Internal System Files
 ├── fonts/                            => Font Files
@@ -201,6 +202,7 @@ src/
 ├── structure/                        => Source Files for Copy (e.g. Template Files for a WP Theme)
 ├── template/                         => Source Files for a Template Compiler (Pug / Twig)
 ├── style/                            => Styling Source Files
+```
 
 If you are not happy with the structure of the `src/` folder, you can customize it. In the `config.json` must also be entered the new paths.
 
@@ -214,6 +216,7 @@ The `dist/` folder is created after initialization (`npm run init`) of the proje
 
 **Dist Folderstructure:**
 
+```bash
 dist/
 ├── assets/                 => All Assets
 |   ├── css/                => CSS Files
@@ -224,6 +227,7 @@ dist/
 |       ├── bitmaps/        => Bitmap Images
 |       └── svgfiles/       => Vector Images
 ├── images/                 => Contents Images
+```
 
 If you therefore should not be satisfied, you can change the structure in the `config.json`. When you change, delete the `dist/` Folder, than run the Init Task.
 
