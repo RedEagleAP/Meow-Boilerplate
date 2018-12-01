@@ -144,7 +144,7 @@
         "src": "favicons/**",
         "dest": "assets/img/system/"
       },
-      {   
+      {
         "src": "facebook-og-image.jpg",
         "dest": "assets/img/system/"
       },
@@ -170,7 +170,7 @@
     "width": "1024",
     "height": "768",
     "minify": true,
-    "inline": false,
+    "inline": true,
     "sources": [
       "index.html"
     ],
