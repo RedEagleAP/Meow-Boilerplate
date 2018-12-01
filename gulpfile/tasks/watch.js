@@ -1,6 +1,6 @@
 /**
- * Tthe Watch Tasks for SASS,
- * JADE, JS and activate BrowserSync
+ * The Watch Tasks for SASS,
+ * PUG, JS and activate BrowserSync
  */
 
 import kc from '../../config.json'
