@@ -2,29 +2,16 @@
   "name": "meow-boilerplate",
   "version": "1.0.9",
   "description": "It's just a little Meow Boilerplate for your next Project",
+  "homepage": "https://redeagleap.github.io/Meow-Boilerplate",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redeagleap/meow-boilerplate.git"
+    "url": "git://github.com/redeagleap/meow-boilerplate.git"
   },
   "license": "MIT",
   "author": {
     "name": "Alexander Prisyazhnyuk",
     "email": "insightinyourmind@gmail.com"
   },
-  "keywords": [
-    "meow boilerplate",
-    "sass",
-    "babel",
-    "cypress",
-    "webpack",
-    "gulp",
-    "sassdoc",
-    "astrum",
-    "boilerplate",
-    "grid",
-    "layout",
-    "framework"
-  ],
   "scripts": {
     "assets": "gulp copy:assets --env=init",
     "build": "cross-env NODE_ENV=production npm run subtask:buildgulp && cross-env NODE_ENV=production npm run subtask:bundlewebpack",
@@ -48,10 +35,10 @@
   "dependencies": {
     "animejs": "^2.2.0",
     "baukasten-grid": "^1.0.16",
-    "bowser": "^2.0.0-beta.1",
+    "bowser": "^2.0.0-beta.3",
     "cq-prolyfill": "^0.4.0",
     "flickity": "^2.1.2",
-    "fontfaceobserver": "^2.0.13",
+    "fontfaceobserver": "^2.1.0",
     "include-media": "^1.4.9",
     "lazysizes": "^4.1.4",
     "modularscale-sass": "^3.0.8",
@@ -109,7 +96,7 @@
     "gulp-imagemin": "^5.0.3",
     "gulp-load-plugins": "^1.5.0",
     "gulp-notify": "^3.2.0",
-    "gulp-plumber": "^1.2.0",
+    "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-size": "^3.0.0",
@@ -140,11 +127,11 @@
     "postcss-scss": "^2.0.0",
     "postcss-short-size": "^4.0.0",
     "postcss-svg": "^2.4.0",
-    "prettier": "^1.15.2",
+    "prettier": "^1.15.3",
     "require-dir": "^1.0.0",
     "run-sequence": "^2.2.1",
     "sassdoc": "^2.5.1",
-    "stylelint": "^9.8.0",
+    "stylelint": "^9.9.0",
     "stylelint-config-sass-guidelines": "^5.2.0",
     "stylelint-order": "^2.0.0",
     "stylelint-scss": "^3.4.0",
@@ -162,7 +149,29 @@
     "yargs": "^12.0.5"
   },
   "engines": {
-    "node": ">=7.6.0"
+    "node": ">=8.0.0"
   },
+  "bugs": {
+    "url": "https://github.com/redeagleap/meow-boilerplate/issues"
+  },
+  "keywords": [
+    "boilerplate",
+    "startkit",
+    "template",
+    "library",
+    "front end",
+    "css",
+    "documentation",
+    "sass",
+    "cypress",
+    "webpack",
+    "gulp",
+    "sassdoc",
+    "astrum",
+    "grid",
+    "layout",
+    "framework",
+    "frameworks"
+  ],
   "title": "SiteTitle"
 }
