@@ -271,7 +271,7 @@ The necessary files can be found under `src/framework/`. Those who want to can e
 
 #### Sass Basics
 
-To generate the CSS file, you use the `style.scss` from the style directory (`src/style/`). But first the structure:
+To generate the CSS file, you use the `main.scss` from the style directory (`src/style/`). But first the structure:
 
 ***Styling Structure***
 
