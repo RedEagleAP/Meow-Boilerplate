@@ -9,6 +9,13 @@
 // Cause we set the map our Breakpoints to their map $breakpoints
 @import '../../../../node_modules/include-media/dist/include-media';
 
+$bk-bp-min: 320px;
+$bk-bp-xs: 400px;
+$bk-bp-s: 600px;
+$bk-bp-m: 800px;
+$bk-bp-l: 1000px;
+$bk-bp-max: 1440px;
+
 // Settings
 $bk-grid-settings-custom: (
   cssgrid: false,
@@ -36,5 +43,3 @@ $bk-grid-settings-custom: (
     max: (from: 1440px, cols: 24, create-classes: false)
   )
 );
-
-// @import '../../../../node_modules/baukasten-grid/scss/baukasten-grid';
