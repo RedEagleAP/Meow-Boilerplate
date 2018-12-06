@@ -170,7 +170,7 @@
     "width": "1024",
     "height": "768",
     "minify": true,
-    "inline": true,
+    "inline": false,
     "sources": [
       "index.html"
     ],
