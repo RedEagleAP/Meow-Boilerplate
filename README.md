@@ -492,6 +492,8 @@ gulp version:bump
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/RedEagleAP/Meow-Boilerplate/blob/master/LICENSE)
+
 <sub>[⇧ back to top](#contents)</sub>
 
 ## Author
@@ -507,5 +509,7 @@ Email : insightinyourmind@gmail.com
 
 Github : https://github.com/redeagleap/meow-boilerplate.git
 ```
+
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
 <sub>[⇧ back to top](#contents)</sub>
