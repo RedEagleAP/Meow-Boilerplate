@@ -17,15 +17,17 @@
 <p  align="center">
 <img  src="https://lh3.googleusercontent.com/eN9nJx8PD9zvr2DHhpNsLb9h2XSK0RteP7x423JlCIzYXwCtwU-kuB9e_WOGsGepn9DMN1Xjwik"  alt="kitty_motivation">
 </p>
-
-# MeowBoilerplate
-
-It's just a little and powerfull Meow Boilerplate for your next Project. Most of the stuff fits for my own requirements and maybe you have the same, you can have a lot of fun with it.
-
-__Give it a try!__
+<p align="center">
+  <h3 align="center">Meow Boilerplate</h3>
+  <p align="center">
+  It's just a little and powerfull Meow Boilerplate for your next Project.<br>
+  Most of the stuff fits for my own requirements and maybe you have<br>
+  the same, you can have a lot of fun with it.
+  </p>
+  <p align="center"><b>Give it a try!</b></p>
+</p>
 
 <!-- Used for the "back to top" links within the document -->
-
 <div id="contents"></div>
 
 ## Table of Contents
