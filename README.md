@@ -52,6 +52,8 @@
 
 Around the CSS part, there are still many automatic functions installed that help the developer. For example, to generate image assets and distribute, to build HTML mockups, to make sprites to generate fallbacks for SVG files. That's why I also avoid the term framework.
 
+If you want to have a more lightweight and cleaner version, try [Light Boilerplate](https://github.com/RedEagleAP/light-boilerplate)
+
 ## Technologies used
 
 **JavaScript**
@@ -188,7 +190,7 @@ The Gulpfile is modularized and ES8 Compatible (with Babel.js), you will find al
 
 **SRC Folderstructure:**
 
-```bash
+```
 src/
 ├── .system/                          => Internal System Files
 ├── fonts/                            => Font Files
@@ -218,7 +220,7 @@ The `dist/` folder is created after initialization (`npm run init`) of the proje
 
 **Dist Folderstructure:**
 
-```bash
+```
 dist/
 ├── assets/                 => All Assets
 |   ├── css/                => CSS Files
