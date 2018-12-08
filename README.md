@@ -54,6 +54,8 @@ Around the CSS part, there are still many automatic functions installed that hel
 
 If you want to have a more lightweight and cleaner version, try [Light Boilerplate](https://github.com/RedEagleAP/light-boilerplate)
 
+As well as a template for creating [README.md](doc/TEMPLATE.md). Or directly to [repo](https://github.com/RedEagleAP/readme-template).
+
 ## Technologies used
 
 **JavaScript**
