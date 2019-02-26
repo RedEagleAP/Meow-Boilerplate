@@ -17,25 +17,24 @@ function processCriticalCss(element, i, callback) {
     `-> Generating critical CSS: ${chalk.cyan(criticalSrc)} -> ${chalk.magenta(criticalDest)}`,
   )
 
-  critical
-    .generate({
-      src: criticalSrc,
-      dest: criticalDest,
-      inline: meow.cssabove.inline,
-      ignore: meow.cssabove.ignore,
-      include: meow.cssabove.include,
-      css: [meow.dist.css + meow.cssabove.cssfile],
-      minify: meow.cssabove.minify,
-      height: meow.cssabove.height,
-      width: meow.cssabove.width,
-    })
-    .then((output) => {
-      console.log(chalk`-> Critical CSS generated: {green ${element.template}_critical.min.css}`)
-      callback()
-    })
-    .error((err) => {
-      console.log(chalk`-> Something goes wrong {red ${err}}`)
-    })
+  critical.generate({
+    src: criticalSrc,
+    dest: criticalDest,
+    inline: meow.cssabove.inline,
+    ignore: meow.cssabove.ignore,
+    include: meow.cssabove.include,
+    css: [meow.dist.css + meow.cssabove.cssfile],
+    minify: meow.cssabove.minify,
+    height: meow.cssabove.height,
+    width: meow.cssabove.width,
+  })
+  .then((output) => {
+    console.log(chalk`-> Critical CSS generated: {green ${element.template}_critical.min.css}`)
+    callback()
+  })
+  .error((err) => {
+    console.log(chalk`-> Something goes wrong {red ${err}}`)
+  })
 }
 
 // Process data in an array synchronously, moving onto the n+1 item only after the nth item callback
