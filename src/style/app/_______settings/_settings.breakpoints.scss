@@ -18,11 +18,36 @@ $bk-bp-max: 1440px;
 
 // Settings
 $bk-grid-settings-custom: (
-  cssgrid: false,
-  cssgrid-fallback: false,
-  flexboxgrid: true,
+  // You want to use CSS Grid?
+  // @Boolean
+  // default: true
+  cssgrid: true,
+
+  // Your Project must support older browsers? No Problem, we've a Fallback (flexbox) here!
+  // @Boolean
+  // default: true
+  cssgrid-fallback: true,
+
+  // You want to use Flexbox only? Also no Problem! But you must set the "cssgrid-fallback" and "cssgrid" to false.
+  // @Boolean
+  // default: false
+  flexboxgrid: false,
+
+  // This add some CSS Styleing to the "section", "row" and "col" classes.
+  // @Boolean
+  // default: false
   testing: false,
+
+  // Naming Conventions? No Problem. You can choose you prefix!
+  // @String
+  // default: 'o-'
   prefix: 'o-',
+
+  // Units are for Paddings and Margins. All Paddings an Margins are Fluid.
+  // That means that on the smallest breakpoint the Padding on each col side
+  // is: gutter * gutter-min-factor (8px * 1) and on the biggest breakpoint it
+  // is: gutter * gutter-max-factor (8px * 2)
+  // For Margins top it is the same with the Vertical factors.
   units: (
     gutter: 8px,
     gutter-min-factor: 1,
@@ -30,16 +55,31 @@ $bk-grid-settings-custom: (
     gutter-min-vertical-factor: 1,
     gutter-max-vertical-factor: 2
   ),
-  offset-classes: false,
-  push-classes: false,
-  pull-classes: false,
+
+  // Class Creation
+  // Not every projects need all this offset / push / pull classes. You decide!
+  // @Boolean
+  // default: true
+  offset-classes: true,
+  push-classes: true,
+  pull-classes: true,
+
+  // Disbale Padding Horizontal for Sections. Rows. Cols
+  // @Boolean
+  // default: false
   disable-padding-horizontal: false,
+
+  // Breakpoints must have at least a "min" and a "max". The other Breakpoints as u like
+  // We use all the time "min-width".
+  // Cols are how many cols can have a row on that specific breakpoint.
   breakpoints: (
-    min: (from: 320px, cols: 12, create-classes: true),
-    xs:  (from: 400px, cols: 12, create-classes: false),
-    s:   (from: 600px, cols: 24, create-classes: true),
-    m:   (from: 800px, cols: 24, create-classes: false),
+    min: (from: 320px, cols: 6, create-classes: true),
+    xs:  (from: 400px, cols: 6, create-classes: true),
+    s:   (from: 600px, cols: 12, create-classes: true),
+    m:   (from: 800px, cols: 12, create-classes: true),
     l:   (from: 1000px, cols: 24, create-classes: true),
-    max: (from: 1440px, cols: 24, create-classes: false)
+    max: (from: 1440px, cols: 24, create-classes: true)
   )
 );
+
+@import '../../../../node_modules/baukasten-grid/scss/baukasten-grid';
