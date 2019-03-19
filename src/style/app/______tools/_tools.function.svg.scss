@@ -1,3 +1,4 @@
+/* stylelint-disable */
 @function svg-url($svg) {
   $encoded: '';
   $slice: 2000;
@@ -18,11 +19,11 @@
     $encoded: #{$encoded}#{$chunk};
     $index: $index + $slice;
   }
-  /* stylelint-disable */
+
   @return url("data:image/svg+xml;utf-8,#{$encoded}");
-  /* stylelint-enable */
 }
 
 @mixin background-svg($svg) {
   background-image: svg-url($svg);
 }
+/* stylelint-enable */
