@@ -5,25 +5,46 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="[Description]">
 
-  <title>MeowBoilerplate</title>
+  <title>Meow Boilerplate</title>
+
+  <meta name="description" content="[Description]">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="google" content="nositelinkssearchbox">
+  <meta name="google" content="notranslate">
 
   <link rel="stylesheet" href="assets/css/main.css">
 
   <meta property="og:description" content="[Description]">
-  <meta property="og:title" content="meow-boilerplate">
+  <meta property="og:title" content="light-boilerplate">
   <meta property="og:type" content="website">
   <meta property="og:url" content="[URL]">
   <meta property="og:image" content="./assets/system/facebook-og-image.jpg">
   <meta name="twitter:description" content="[Description]">
-  <meta name="twitter:title" content="meow-boilerplate">
+  <meta name="twitter:title" content="light-boilerplate">
   <meta name="twitter:image:src" content="./assets/system/twitter-og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Browser Tab Bar Color -->
+  <!-- Chrome, Firefox OS and Opera -->
   <meta name="theme-color" content="#29b8f2">
+  <!-- Windows Phone -->
   <meta name="msapplication-navbutton-color" content="#29b8f2">
+
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PWA Light Boilerplate">
+
+  <!-- To WebP or not to WebP. That is the question.
+      https://github.com/ai/webp-in-css#readme -->
+  <script>
+    var i = new
+    Image;
+    i.onload = i.onerror = function() {
+      document.body.classList.add(i.height ? "webp" : "no-webp")
+    };
+    i.src = "data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==";
+  </script>
 </head>
 
 <body>
@@ -32,7 +53,7 @@
 
   </header>
 
-  <main class="main">
+  <main class="page-main">
 
   </main>
 
@@ -40,7 +61,6 @@
 
   </footer>
 
-  <script src="assets/js/main.js"></script>
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <!-- <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
