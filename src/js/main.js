@@ -1,14 +1,18 @@
 // Main JS File
 // Polyfills
-import cq from 'cq-prolyfill' // eslint-disable-line
-import 'svgxuse' // eslint-disable-line
-import '@babel/polyfill'
+import 'svgxuse';
+import '@babel/polyfill';
 
 // Import Partials
-import './scripts/bowser'
-import scripts from './partial/allscripts'
+import './lib/bling';
+import './scripts/bowser';
+import scripts from './partial/allscripts';
 
-scripts.init()
+const app = {
+  init() {
+    scripts.init();
+  },
+};
 
-// Activate Container Queries
-cq({ postcss: true })
+// Init App!
+app.init();
