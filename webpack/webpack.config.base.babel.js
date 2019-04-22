@@ -4,24 +4,24 @@
  * @package  Meow boilerplate
  * @author   Alexander Prisyazhnyk <insightinyourmind@gmail.com>
  */
-import path from 'path'
-import webpack from 'webpack'
-import WebpackBar from 'webpackbar'
-import Stylish from 'webpack-stylish'
+import path from 'path';
+import webpack from 'webpack';
+import WebpackBar from 'webpackbar';
+import Stylish from 'webpack-stylish';
 
-import CleanWebpackPlugin from 'clean-webpack-plugin'
+import CleanWebpackPlugin from 'clean-webpack-plugin';
 
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import WriteFilePlugin from 'write-file-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import WriteFilePlugin from 'write-file-webpack-plugin';
 
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import OptimizeCSSPlugin from 'optimize-css-assets-webpack-plugin'
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import OptimizeCSSPlugin from 'optimize-css-assets-webpack-plugin';
 
-const utils = require('./utils')
+const utils = require('./utils');
 
-const nodeEnv = process.env.NODE_ENV || 'production'
+const nodeEnv = process.env.NODE_ENV || 'production';
 
-const { ifProduction, ifDevelopment } = utils.getIfUtils(nodeEnv)
+const { ifProduction, ifDevelopment } = utils.getIfUtils(nodeEnv);
 
 /*
  |--------------------------------------------------------------------------
@@ -37,7 +37,10 @@ export default {
   stats: 'none',
   resolve: {
     extensions: ['.js'],
-    modules: [utils.resolve(utils.meowConf.src.base), utils.resolve('node_modules')],
+    modules: [
+      utils.resolve(utils.meowConf.src.base),
+      utils.resolve('node_modules'),
+    ],
     alias: {
       src: utils.resolve(utils.meowConf.src.base),
     },
@@ -87,8 +90,10 @@ export default {
         removeComments: true,
         collapseWhitespace: true,
         removeAttributeQuotes: false,
+        minifyCSS: true,
+        minifyJS: true,
       },
       chunksSortMode: 'dependency',
     }),
   ]),
-}
+};
