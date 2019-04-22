@@ -1,0 +1,14 @@
+// ==========================================================================
+//   Svg Class Replace
+// ==========================================================================
+
+/// Mixin to replace a defined class with another one
+///
+/// @link https://codepen.io/Red_Eagle/pen/NmbKJe
+///
+@function svg-url-with-replaced-class($svg, $class-to-replace, $new-class) {
+  $replaced-svg: str-replace($svg, 'class="#{$class-to-replace}"', 'class="#{$new-class}"');
+  $replaced-svg-url: svg-url('#{$replaced-svg}');
+
+  @return $replaced-svg-url;
+}
