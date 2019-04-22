@@ -1,0 +1,36 @@
+// ==========================================================================
+//   SVG COLOR STRING MODIFIER
+// ==========================================================================
+
+@function svg-color-string-modifier($svg, $svg-color: false) {
+
+  // Checking if a color value has been passed down
+  @if ($svg-color !=false) {
+    $svg-url: svg-url($svg);
+    $svg-color-str: quote(#{$svg-color}); // Adding quotes around Hex value so its actually a string
+    $svg-color: str-replace($svg-color-str, "#", "%23"); // if the color has a "#" at the start it will be removed from the string
+    $svg-colored: str-replace($svg-url, "fill='%23'", "fill='#{$svg-color}'");
+
+    @return #{$svg-colored};
+  }
+}
+
+// Example
+//
+// $svg-apple: "<svg ... svg>";
+//
+// .icon {
+//   @include svg-color($svg-apple, #242424);
+// }
+//
+// .icon:hover {
+//   @include svg-color($svg-apple, #0ddb63);
+// }
+
+// # SVG COLOR
+// =====================================
+@mixin svg-color($svg, $color: false) {
+  @if ($color !=false) {
+    background-image: svg-color-string-modifier($svg, $color);
+  }
+}
