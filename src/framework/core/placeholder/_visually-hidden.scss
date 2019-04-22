@@ -23,38 +23,46 @@
 ///
 /// @example css - css
 ///   .box-1, .box-2 {
-///     border: 0;
-///     clip: rect(0, 0, 0, 0);
-///     height: 1px;
-///     width: 1px;
-///     margin: 1px;
-///     overflow: hidden;
-///     padding: 0;
-///     position: absolute; }
+///       position: absolute;
+///       height: 1px;
+///       width: 1px;
+///       margin: -1px;
+///       border: 0;
+///       padding: 0;
+///       clip-path: inset(50%);
+///       clip: rect(0,0,0,0);
+///       white-space: nowrap;
+///       overflow: hidden; }
 ///
 ///   @media screen and (min-width: 768px) {
 ///     .box-3 {
-///       border: 0;
-///       clip: rect(0, 0, 0, 0);
+///       position: absolute;
 ///       height: 1px;
 ///       width: 1px;
-///       margin: 1px;
-///       overflow: hidden;
+///       margin: -1px;
+///       border: 0;
 ///       padding: 0;
-///       position: absolute; } }
+///       clip-path: inset(50%);
+///       clip: rect(0,0,0,0);
+///       white-space: nowrap;
+///       overflow: hidden; } }
 @mixin visually-hidden($extend: true) {
   @if $extend {
     @extend %visually-hidden;
 
-  } @else {
-    border: 0;
-    clip: rect(0,0,0,0);
+  }
+
+  @else {
+    position: absolute;
     height: 1px;
     width: 1px;
-    margin: 1px;
-    overflow: hidden;
+    margin: -1px;
+    border: 0;
     padding: 0;
-    position: absolute;
+    clip-path: inset(50%);
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    overflow: hidden;
   }
 }
 
