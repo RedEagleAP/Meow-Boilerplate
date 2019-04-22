@@ -2,38 +2,44 @@
 // Normalize
 // ===================================================
 
-/*
-  Base Styles
-
-  Styleguide 1
-*/
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   background: transparent;
 
-  @if map-get($meow-activate, box-sizing) { box-sizing: border-box; }
+  @if map-get($meow-activate, box-sizing) {
+    box-sizing: border-box;
+  }
 
-  @if map-get($meow-typo, unit) == rem {
-    @if $meow-active-responsive-fonts != false {
+  @if map-get($meow-typo, unit)==rem {
+    @if $meow-active-responsive-fonts !=false {
       @include responsive-fontsize($meow-active-responsive-fonts);
+    }
 
-    } @else {
+    @else {
       font-size: map-get($meow-typo, base-scale) + 0%;
     }
 
-  } @else {
+  }
+
+  @else {
     font-size: map-get($meow-typo, base-scale) + 0%;
   }
+
   text-rendering: optimizeLegibility;
 }
 
 // Global Activation
 * {
-  @if map-get($meow-activate, antialias) { @include antialias; }
+  @if map-get($meow-activate, antialias) {
+    @include antialias;
+  }
 
-  @if map-get($meow-activate, box-sizing) == true {
-    &, &:before, &:after {
+  @if map-get($meow-activate, box-sizing)==true {
+
+    &,
+    &:before,
+    &:after {
       box-sizing: inherit;
     }
   }
@@ -46,21 +52,39 @@ body {
 
 body {
   margin: 0;
+  padding: 0;
   position: relative;
   color: map-get($meow-color-route, text);
   @include fontsize(map-get($meow-typo, base-size));
   line-height: map-get($meow-typo, line-height);
 
-  @if map-get($meow-activate, hyphens) { @include text-hyphen; }
+  @if map-get($meow-activate, hyphens) {
+    @include text-hyphen;
+  }
 
-  @if map-get($meow-color-route, body) { background-color: map-get($meow-color-route, body); }
+  @if map-get($meow-color-route, body) {
+    background-color: map-get($meow-color-route, body);
+  }
 
-  @if map-get($meow-typo-style, base-weight) { font-weight: map-get($meow-typo-style, base-weight); }
+  @if map-get($meow-typo-style, base-weight) {
+    font-weight: map-get($meow-typo-style, base-weight);
+  }
 }
 
-@if map-get($meow-activate, hyphens) == true {
-  abbr, acronym, code, dir, kbd,
-  listing, plaintext, q, samp, tt, var, xmp {
+@if map-get($meow-activate, hyphens)==true {
+
+  abbr,
+  acronym,
+  code,
+  dir,
+  kbd,
+  listing,
+  plaintext,
+  q,
+  samp,
+  tt,
+  var,
+  xmp {
     hyphens: none;
   }
 }
@@ -69,21 +93,51 @@ main {
   display: block;
 }
 
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-dl, dd, ol, ul {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dd,
+ol,
+ul {
   margin-top: 0
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary
-{display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
 }
 
-audio, progress, canvas, video {
+audio,
+progress,
+canvas,
+video {
   display: inline-block;
 }
 
-body, button, input, select, textarea, .sg-body {
+body,
+button,
+input,
+select,
+textarea,
+.sg-body {
   font-family: map-get($meow-typo-style, base-font);
 }
 
@@ -92,98 +146,75 @@ audio:not([controls]) {
   height: 0;
 }
 
-select, option, button, a, input[type="button"],input[type="reset"],input[type="submit"] {
+select,
+option,
+button,
+a,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   cursor: pointer;
 }
 
-[hidden],template {
+[hidden],
+template {
   display: none;
 }
 
-/*
-  Typosizes
-
-  A definition of all fontsizes (classes and tags)
-
-  Styleguide 1.1
-*/
-
-/*
-  Main Heading Style
-
-  markup:
-  <h1>Lorem Ipsum it dolor</h1>
-  <h3>Lorem Ipsum it dolor</h3>
-
-  Styleguide 1.1.1
-*/
+// Main Heading Style
 %heading {
   text-rendering: optimizeLegibility;
-  @if map-get($meow-global-heading,texttransform) != false {
-    text-transform: map-get($meow-global-heading,texttransform);
+
+  @if map-get($meow-global-heading, texttransform) !=false {
+    text-transform: map-get($meow-global-heading, texttransform);
   }
 
-  @if map-get($meow-global-heading,lineheight) != false {
-    @if map-get($meow-global-heading,lineheight) == d {
+  @if map-get($meow-global-heading, lineheight) !=false {
+    @if map-get($meow-global-heading, lineheight)==d {
       line-height: 1.25;
 
-    } @else {
-      @include lineheight(map-get($meow-global-heading,lineheight));
+    }
+
+    @else {
+      @include lineheight(map-get($meow-global-heading, lineheight));
     }
   }
 
-  @if map-get($meow-global-heading,marginbottom) != false {
-    @include marginbottom(map-get($meow-global-heading,marginbottom));
+  @if map-get($meow-global-heading, marginbottom) !=false {
+    @include marginbottom(map-get($meow-global-heading, marginbottom));
   }
 
-  @if map-get($meow-global-heading,fontweight) != false {
-    font-weight: map-get($meow-global-heading,fontweight);
+  @if map-get($meow-global-heading, fontweight) !=false {
+    font-weight: map-get($meow-global-heading, fontweight);
   }
 
-  @if map-get($meow-typo-style, heading-font) != false OR map-get($meow-color-route, headline) != false {
-    @if map-get($meow-typo-style, heading-font) != false {
+  @if map-get($meow-typo-style, heading-font) !=false OR map-get($meow-color-route, headline) !=false {
+    @if map-get($meow-typo-style, heading-font) !=false {
       font-family: map-get($meow-typo-style, heading-font);
     }
 
-    @if map-get($meow-color-route, headline) != false {
+    @if map-get($meow-color-route, headline) !=false {
       color: map-get($meow-color-route, headline);
     }
   }
 }
 
 // Generate Fontsizes
-@if $meow-generate-typostyles { @include typogenerator; }
+@if $meow-generate-typostyles {
+  @include typogenerator;
+}
 
-
-/*
-  Typostyles and Elements
-
-  Styleguide 1.2
-*/
-
-/*
-  Header-Stack
-
-  Group Wrapper for Headlines
-
-  markup:
-  <header class="header-stack">
-    <h1>Main Headline</h1>
-    <h2 class="h4">Subheadline</h2>
-  </header>
-
-  Styleguide 1.2.1
-*/
+// Group Wrapper for Headlines
 .header-stack {
-  @if map-get($meow-global-heading,marginbottom) != false {
-    @include marginbottom(map-get($meow-global-heading,marginbottom));
+  @if map-get($meow-global-heading, marginbottom) !=false {
+    @include marginbottom(map-get($meow-global-heading, marginbottom));
   }
 
   > * {
     margin-bottom: 0
   }
 
-  @if map-get($meow-typo-margin,top) > 0 {
+  @if map-get($meow-typo-margin, top) > 0 {
 
     p + & {
       @include margintop(map-get($meow-typo-margin, top));
@@ -191,140 +222,93 @@ select, option, button, a, input[type="button"],input[type="reset"],input[type="
   }
 }
 
-/*
-  Paragraph
-
-  Style for Texts
-
-  markup:
-  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.2.2
-*/
+// Paragraph
 p {
 
   @include marginbottom(map-get($meow-typo-margin, bottom));
 
-  @if map-get($meow-typo-margin,top) > 0 {
-    + h1, + h2, + h3, + h4, + h5, + h6 {
+  @if map-get($meow-typo-margin, top) > 0 {
+
+    + h1,
+    + h2,
+    + h3,
+    + h4,
+    + h5,
+    + h6 {
       @include margintop(map-get($meow-typo-margin, bottom) * 1.8);
     }
   }
 }
 
-/*
-  Links
-
-  Style for Text Links
-
-  markup:
-  <a href="#">This is a link</a>
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.2.3
-*/
+// Links
 a {
-  // outline: 0;
+  outline: 0;
   line-height: inherit;
   background: transparent;
-  color: map-get($meow-color-route,link);
+  color: map-get($meow-color-route, link);
+  transition: all 0.25s cubic-bezier(0.215, 0.610, 0.355, 1);
 
-  @if map-get($meow-typo-style,link-decoration) {
+  @if map-get($meow-typo-style, link-decoration) {
     text-decoration: underline;
-  } @else {
+  }
+
+  @else {
     text-decoration: none;
   }
 
   &:hover,
   &.link-hover {
-    color: map-get($meow-color-route,link-hover);
+    color: map-get($meow-color-route, link-hover);
 
-    @if map-get($meow-typo-style,link-decoration-hover) {
+    @if map-get($meow-typo-style, link-decoration-hover) {
       text-decoration: underline;
-    } @else {
+    }
+
+    @else {
       text-decoration: none;
     }
   }
 
   &:active,
   &.is-active {
-    color: map-get($meow-color-route,link-active);
+    color: map-get($meow-color-route, link-active);
   }
 
   /*Disable :focus on elements affects the accessibility  of interfaces.
    *Use wisely!
    */
-  // &:hover,
-  // &:active,
-  // &:focus {
-  //   outline: 0;
-  // }
+  &:hover,
+  &:active,
+  &:focus {
+    outline: 0;
+  }
 }
 
-/*
-  Strong
-
-  Bold Style for Texts
-
-  markup:
-  <p><strong>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</strong> sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.2.4
-*/
+// Bold Style for Texts
 strong {
-  @if map-get($meow-typo-style,bold-weight) { font-weight: map-get($meow-typo-style,bold-weight); }
+  @if map-get($meow-typo-style, bold-weight) {
+    font-weight: map-get($meow-typo-style, bold-weight);
+  }
 
-  @if map-get($meow-typo-style,bold-font) { font-family: map-get($meow-typo-style,bold-font); }
+  @if map-get($meow-typo-style, bold-font) {
+    font-family: map-get($meow-typo-style, bold-font);
+  }
 }
 
-/*
-  Italic
+// Italic Style for Texts
+em,
+dfn {
+  @if map-get($meow-typo-style, italic-style) {
+    font-style: map-get($meow-typo-style, italic-style);
+  }
 
-  Italic Style for Texts
-
-  markup:
-  <p><em>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</em> sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.2.5
-*/
-em, dfn {
-  @if map-get($meow-typo-style,italic-style) { font-style: map-get($meow-typo-style,italic-style); }
-
-  @if map-get($meow-typo-style,italic-font) != false { font-family: map-get($meow-typo-style,italic-font); }
+  @if map-get($meow-typo-style, italic-font) !=false {
+    font-family: map-get($meow-typo-style, italic-font);
+  }
 }
 
-/*
-  Abbr
 
-  markup:
-  <abbr>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</abbr>
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.2.6
-*/
+// Abbr
 abbr {
   font-variant: small-caps;
   text-transform: lowercase;
@@ -340,60 +324,21 @@ abbr {
   }
 }
 
-
-/*
-  Hightlight, Mark
-
-  For Highlightning text passages, also for hightlightning with mouse select
-
-  markup:
-  <p><mark>Lorem ipsum dolor sit amet</mark>, consetetur sadipscing elitr</p>
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.2.7
-*/
-mark, .hightlight, ::selection {
-  background: map-get($meow-color-route,highlight-bg);
-  color: map-get($meow-color-route,hightlight-text);
+// For Highlightning text passages, also for hightlightning with mouse select
+mark,
+.hightlight,
+::selection {
+  background: map-get($meow-color-route, highlight-bg);
+  color: map-get($meow-color-route, hightlight-text);
 }
 
-
-/*
-  Lists
-
-  Styles for Unordered, Ordered and Definition Lists. If a `<ul>` or `<dl>` is wrapped in a `<nav>`, the list got an neutral style.
-
-  markup:
-  <ul>
-    <li>List Entry</li>
-    <li>List Entry</li>
-    <li>List Entry</li>
-  </ul>
-  <ol>
-    <li>List Entry</li>
-    <li>List Entry</li>
-    <li>List Entry</li>
-  </ol>
-  <dd>
-    <dt>List Entry</dt>
-    <dd>List Entry</dd>
-  </dd>
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.2.8
-*/
-ul,dl {
-  list-style-type: map-get($meow-typo-sizes,list-style);
-  padding-left: map-get($meow-typo-sizes,list-margin) + 0px;
-  @include marginbottom(map-get($meow-typo-margin,bottom));
+//  Styles for Unordered, Ordered and Definition Lists. If a `<ul>` or `<dl>`
+//  is wrapped in a `<nav>`, the list /got an neutral style.
+ul,
+dl {
+  list-style-type: map-get($meow-typo-sizes, list-style);
+  padding-left: map-get($meow-typo-sizes, list-margin) + 0px;
+  @include marginbottom(map-get($meow-typo-margin, bottom));
 
   nav & {
     list-style-type: none;
@@ -403,101 +348,83 @@ ul,dl {
 }
 
 ol {
-  padding-left: map-get($meow-typo-sizes,list-margin) + 2px;
-  @include marginbottom(map-get($meow-typo-margin,bottom));
+  padding-left: map-get($meow-typo-sizes, list-margin) + 2px;
+  @include marginbottom(map-get($meow-typo-margin, bottom));
 }
 
-li, dt, dd {
-  @if map-get($meow-typo-sizes,list-fontsize) != false {
-    @include fontsize(map-get($meow-typo-sizes,list-fontsize));
+li,
+dt,
+dd {
+  @if map-get($meow-typo-sizes, list-fontsize) !=false {
+    @include fontsize(map-get($meow-typo-sizes, list-fontsize));
   }
 
-  @if map-get($meow-typo-sizes,list-lineheight) != false {
-    line-height: map-get($meow-typo-sizes,list-lineheight);
+  @if map-get($meow-typo-sizes, list-lineheight) !=false {
+    line-height: map-get($meow-typo-sizes, list-lineheight);
   }
 }
 
 li {
-  > ul,  > ol {
+
+  > ul,
+  > ol {
     margin-bottom: 0;
   }
 }
 
-dt, dd {
+dt,
+dd {
   > dl {
     margin-bottom: 0;
   }
 }
 
-/*
-  Hairline
 
-  markup:
-  <hr>
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.2.9
-*/
+// Hairline
 hr {
   @include marginbottom(map-get($meow-typo-margin, bottom));
-  height: map-get($meow-hairline,height) + 0px;
+  height: map-get($meow-hairline, height) + 0px;
   border-left: 0;
   border-bottom: 0;
   border-right: 0;
-  border-top: (map-get($meow-hairline,height) + 0px) map-get($meow-hairline,style) map-get($meow-hairline,color);
+  border-top: (map-get($meow-hairline, height) + 0px) map-get($meow-hairline, style) map-get($meow-hairline, color);
   position: relative;
 
-  @if map-get($meow-typo-margin,top) > 0 {
-    @include margintop(map-get($meow-typo-margin,bottom)); }
+  @if map-get($meow-typo-margin, top) > 0 {
+    @include margintop(map-get($meow-typo-margin, bottom));
+  }
 }
 
-/*
-  Code
-
-  For write some code snippets
-
-  markup:
-  <code>
-    <pre>
-      <div>some Code</div>
-    </pre>
-  <code>
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.2.10
-*/
-code, kbd, pre, samp {
-  @if map-get($meow-typo-sizes, code-fontsize) != false {
+// For write some code snippets
+code,
+kbd,
+pre,
+samp {
+  @if map-get($meow-typo-sizes, code-fontsize) !=false {
     @include fontsize(map-get($meow-typo-sizes, code-fontsize));
   }
 
-  @if map-get($meow-typo-sizes, code-lineheight) != false {
+  @if map-get($meow-typo-sizes, code-lineheight) !=false {
     line-height: map-get($meow-typo-sizes, code-lineheight);
   }
 
-  @if map-get($meow-typo-style, code-weight) != false {
+  @if map-get($meow-typo-style, code-weight) !=false {
     font-weight: map-get($meow-typo-style, code-weight);
   }
 
-  @if map-get($meow-typo-style, code-font) != false {
+  @if map-get($meow-typo-style, code-font) !=false {
     font-family: map-get($meow-typo-style, code-font);
 
-  } @else {
+  }
+
+  @else {
     font-family: monospace, monospace;
   }
 }
 
 pre {
   white-space: pre;
-  @include marginbottom(map-get($meow-typo-margin,bottom));
+  @include marginbottom(map-get($meow-typo-margin, bottom));
 
   > code {
     word-wrap: normal;
@@ -509,50 +436,24 @@ code {
   white-space: pre;
 }
 
-/*
-  Quotes
-
-  markup:
-  <q>Say something</q>
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.2.11
-*/
+//  Quotes
 q {
-  quotes: "\201C" "\201D" "\2018" "\2019";
+  quotes: "\201C""\201D""\2018""\2019";
 
-  &:before, &:after {
+  &:before,
+  &:after {
     content: '';
     content: none;
   }
 }
 
-/*
-  Small Fonts
-
-  Some Styles for Smaller Texts
-
-  markup:
-  <small>Small Text</small><br>
-  <sup>Superposition</sup><br>
-  <sub>Subposition</sub>
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.2.12
-*/
+// Some Styles for Smaller Texts
 small {
   font-size: 80%;
 }
 
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -567,57 +468,40 @@ sub {
   bottom: -0.25em;
 }
 
-// i {
-//   font-style: normal;
-//   display: inline-block;
-// }
+i {
+  font-style: normal;
+  display: inline-block;
+}
 
-/*
-  Blockquotes
-
-  Simple Style for Blockquotes
-
-  markup:
-  <blockquote>
-    <p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-    <cite>Author from Lorem Ipsum</cite>
-  </blockquote>
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.2.13
-*/
+// Simple Style for Blockquotes
 blockquote {
   margin-left: 0;
   margin-right: 0;
-  @include marginbottom(map-get($meow-typo-margin,bottom));
+  @include marginbottom(map-get($meow-typo-margin, bottom));
 
   & p {
-    @if map-get($meow-typo-sizes,quote-fontsize) != false {
-      @include fontsize(map-get($meow-typo-sizes,quote-fontsize));
+    @if map-get($meow-typo-sizes, quote-fontsize) !=false {
+      @include fontsize(map-get($meow-typo-sizes, quote-fontsize));
     }
 
-    @if map-get($meow-typo-sizes,quote-lineheight) != false {
-      line-height: map-get($meow-typo-sizes,quote-lineheight);
+    @if map-get($meow-typo-sizes, quote-lineheight) !=false {
+      line-height: map-get($meow-typo-sizes, quote-lineheight);
     }
   }
 
   cite {
     font-style: normal;
 
-    @if map-get($meow-typo-sizes,cite-fontsize) != false {
-      @include fontsize(map-get($meow-typo-sizes,cite-fontsize));
+    @if map-get($meow-typo-sizes, cite-fontsize) !=false {
+      @include fontsize(map-get($meow-typo-sizes, cite-fontsize));
     }
 
-    @if map-get($meow-typo-sizes,cite-lineheight) != false {
-      line-height: map-get($meow-typo-sizes,cite-lineheight);
+    @if map-get($meow-typo-sizes, cite-lineheight) !=false {
+      line-height: map-get($meow-typo-sizes, cite-lineheight);
     }
 
     &:before {
-      content : '\2014 \0020';
+      content: '\2014 \0020';
     }
   }
 
@@ -627,46 +511,27 @@ blockquote {
   }
 }
 
-blockquote, q, cite {
-  @if map-get($meow-typo-style, quote-font) != false {
+blockquote,
+q,
+cite {
+  @if map-get($meow-typo-style, quote-font) !=false {
     font-family: map-get($meow-typo-style, quote-font);
   }
 
-  @if map-get($meow-typo-style, quote-weight) != false {
+  @if map-get($meow-typo-style, quote-weight) !=false {
     font-weight: map-get($meow-typo-style, quote-weight);
   }
 
-  @if map-get($meow-typo-style, quote-style) != false {
+  @if map-get($meow-typo-style, quote-style) !=false {
     font-style: map-get($meow-typo-style, quote-style);
   }
 
-  @if map-get($meow-color-route, blockquote) != false {
+  @if map-get($meow-color-route, blockquote) !=false {
     color: map-get($meow-color-route, blockquote);
   }
 }
 
-/*
-  Base Media Elements
-
-  Styleguide 1.3
-*/
-
-/*
-  Image
-
-  Base Style for Images. Images without `height` and `width` are fluid, to there max-width.
-
-  markup:
-  <img src="http://lorempixel.com/400/200/cats"><br>
-  <img src="http://lorempixel.com/400/200/cats" height="300" width="200">
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.3.1
-*/
+// Base Style for Images. Images without `height` and `width` are fluid, to there max-width.
 img {
   border-style: none;
   max-width: 100%;
@@ -678,21 +543,7 @@ img {
   }
 }
 
-/*
-  Figure
-
-  Is a container for Images, all images inside `<figure>` fill the complete space.
-
-  markup:
-  <figure><img src="http://lorempixel.com/500/400/cats"></figure>
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.3.2
-*/
+// Is a container for Images, all images inside `<figure>` fill the complete space.
 figure {
   margin: 0;
 
@@ -703,25 +554,13 @@ figure {
   }
 }
 
-
-/*
-  Map
-
-  Simple Wrapper to remove `max-width` from embed google Maps
-
-  markup:
-  <div class="map_canvas"><iframe...></div>
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.3.3
-*/
+// Simple Wrapper to remove `max-width` from embed google Maps
 #map_canvas,
 .map_canvas {
-  img, embed, object {
+
+  img,
+  embed,
+  object {
     max-width: none !important;
   }
 }
@@ -730,64 +569,19 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-/*
-  Video
-
-  Make Video Elements Fluid
-
-  markup:
-  <video></video>
-
-  sg-wrapper:
-  <div class="sg-body" style="height: 0; overflow: hidden;">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.3.4
-*/
+// Make Video Elements Fluid
 video {
   width: 100% !important;
   height: auto !important;
 }
 
-/*
-  Base Form Elements
-
-  Styleguide 1.4
-*/
-
-
-/*
-  Fieldset
-
-  markup:
-  <fieldset>Lorem Ipsum</fieldset>
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.4.1
-*/
+// Fieldset
 fieldset {
   border: 0;
   padding: 0.35em 0.75em 0.625em;
 }
 
-/*
-  Legend
-
-  markup:
-  <legend>Lorem Ipsum</legend>
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.4.2
-*/
+//  Legend
 legend {
   box-sizing: border-box;
   color: inherit;
@@ -798,50 +592,33 @@ legend {
   white-space: normal;
 }
 
-/*
-  Input
 
-  markup:
-  <input type="text" placeholder="Some Values...">
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.4.3
-*/
+// Input
 input {
   line-height: normal;
+
   /*Disable :focus on elements affects the accessibility  of interfaces.
    *Use wisely!
    */
-  // &:focus {
-  //   outline: 0;
-  // }
+  &:focus {
+    outline: 0;
+  }
 }
 
+// Buttons, Selects, Inputs
 
-/*
-  Buttons, Selects, Inputs
-
-  markup:
-  <button>Button</button><br>
-  <input type="submit" value="Submit"><br>
-  <input type="reset" value="Reset"><br>
-  <input type="checkbox" value="1"><br>
-  <input type="radio" value="1"><br>
-  <input type="search" value="1"><br>
-
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.4.4
-*/
-button, optgroup, input, select, textarea {
+// markup:
+// <button>Button</button><br>
+// <input type="submit" value="Submit"><br>
+// <input type="reset" value="Reset"><br>
+// <input type="checkbox" value="1"><br>
+// <input type="radio" value="1"><br>
+// <input type="search" value="1"><br>
+button,
+optgroup,
+input,
+select,
+textarea {
   font-family: inherit;
   font-size: 100%;
   margin: 0;
@@ -853,7 +630,8 @@ button {
   overflow: visible;
 }
 
-button, select {
+button,
+select {
   text-transform: none;
 }
 
@@ -896,14 +674,17 @@ input[type="radio"] {
   cursor: pointer;
   padding: 0;
 }
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
+
 input[type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
+
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -917,63 +698,24 @@ input[type="search"]::-webkit-search-decoration {
 /*Disable :focus on elements affects the accessibility  of interfaces.
  *Use wisely!
  */
-// button::-moz-focus-inner,
-// input::-moz-focus-inner {
-//   border: 0;
-//   padding: 0;
-// }
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
 
-// button:focus {
-//   outline: none;
-// }
+button:focus {
+  outline: none;
+}
 
-/*
-  Textarea
-
-  markup:
-  <textarea name="" id="" cols="30" rows="10"></textarea>
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.4.5
-*/
+// Textarea
 textarea {
   overflow: auto;
   vertical-align: top;
   resize: vertical;
 }
 
-/*
-  Table Elements
-
-  Styleguide 1.5
-*/
-
-/*
-  Table
-
-  markup:
-  <table>
-    <tr>
-      <th>Table</th>
-      <th>Head</th>
-    <tr>
-    <tr>
-      <td>Table</td>
-      <td>Cell</td>
-    </tr>
-  </table>
-
-  sg-wrapper:
-  <div class="sg-body">
-    <sg-wrapper-content/>
-  </div>
-
-  Styleguide 1.5.1
-*/
+// Table Elements
 table {
   border-collapse: collapse;
   border-spacing: 0;
