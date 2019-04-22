@@ -1,9 +1,7 @@
-/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+clike+javascript+json+markdown+php+php-extras+scss+twig&plugins=line-numbers+normalize-whitespace */
-/**
- * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
- */
+// http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+clike+javascript+json+markdown+php+php-extras+scss+twig&plugins=line-numbers+normalize-whitespace
+//  okaidia theme for JavaScript, CSS and HTML
+//  Loosely based on Monokai textmate theme by http://www.monokai.nl/
+//  @author ocodia
 /* stylelint-disable */
 code[class*="language-"],
 pre[class*="language-"] {
@@ -32,7 +30,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: co('black','90');
+  background: co('black', '90');
 }
 
 /* Inline code */
@@ -163,4 +161,5 @@ pre.line-numbers > code {
   display: block;
   text-align: right;
 }
+
 /* stylelint-enable */

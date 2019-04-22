@@ -1,27 +1,24 @@
-/*
- |--------------------------------------------------------------------------
- |  Fluid Type
- |--------------------------------------------------------------------------
- */
-/**
-    More Infos: http://madebymike.com.au/writing/fluid-type-calc-examples/
+// ==========================================================================
+//   Fluid Type
+// ==========================================================================
 
-    Single property
-    html {
-      @include fluidd(14px, 18px, font-size);
-    }
-
-    Multiple properties with same values
-    h1 {
-      @include fluidd(20px, 100px, padding-bottom padding-top);
-    }
- */
+// More Infos: http://madebymike.com.au/writing/fluid-type-calc-examples/
+//
+// Single property
+// html {
+//   @include mw-fluid(14px, 18px, font-size);
+// }
+//
+// Multiple properties with same values
+// h1 {
+//   @include mw-fluid(20px, 100px, padding-bottom padding-top);
+// }
 
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
 
-@mixin fluidd($min-value, $max-value, $properties: null, $min-vw: $bk-minWidth, $max-vw: $bk-maxWidth) {
+@mixin mw-fluid($min-value, $max-value, $properties: null, $min-vw: $bk-minWidth, $max-vw: $bk-maxWidth) {
   @if ($properties != null) {
     @each $property in $properties {
       #{$property}: $min-value;
@@ -43,5 +40,5 @@
 
 // Shorthand Version
 @mixin flu($args...) {
-  @include fluidd($args...);
+  @include mw-fluid($args...);
 }

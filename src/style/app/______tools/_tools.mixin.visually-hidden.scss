@@ -1,21 +1,26 @@
-/*
- |--------------------------------------------------------------------------
- |  Visually Hidden
- |--------------------------------------------------------------------------
- */
+// ==========================================================================
+//   Visually Hidden
+// ==========================================================================
 
-@mixin visuallyhidden() {
-  border: 0 !important;
-  clip: rect(0 0 0 0) !important;
-  height: 1px !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  position: absolute !important;
-  width: 1px !important;
+@mixin vh($extend: true) {
+  @if $extend {
+    @extend %visuallyhidden;
+  }
+  @else {
+    position: absolute !important;
+    height: 1px !important;
+    width: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    clip-path: inset(50%) !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+  }
 }
 
-// Shorthand Version
-@mixin vh($args...) {
-  @include visuallyhidden($args...);
+// Placeholder Class
+%visuallyhidden {
+  @include vh(false);
 }

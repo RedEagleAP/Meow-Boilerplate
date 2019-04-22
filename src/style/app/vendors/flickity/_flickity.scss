@@ -16,7 +16,7 @@
   align-items: center;
   display: none;
 
-  @include media('>=s') {
+  @include break('s') {
     display: flex;
   }
 
@@ -49,7 +49,7 @@
     display: none;
   }
 
-  @include media('>=m') {
+  @include break('m') {
     display: block;
   }
 

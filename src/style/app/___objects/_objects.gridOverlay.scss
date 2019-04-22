@@ -53,7 +53,7 @@
       &:nth-child(12n) ~ .o-col {
         display: none;
 
-        @include media('>=s') {
+        @include break('s') {
           display: block;
         }
       }

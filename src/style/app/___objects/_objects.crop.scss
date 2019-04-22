@@ -4,9 +4,9 @@
  |--------------------------------------------------------------------------
  */
 
-$bk-crops: (
+$mw-crops: (
   (2:1),
-  (3:2,)
+  (3:2),
   (4:3),
   (16:9),
   (16:10),
@@ -42,7 +42,7 @@ $bk-crops: (
 }
 
 // Crop Classes
-@each $crop in $bk-crops {
+@each $crop in $mw-crops {
 
   @each $antecedent, $consequent in $crop {
 
@@ -54,7 +54,7 @@ $bk-crops: (
       @error '`#{$consequent}` needs to be a number.';
     }
 
-    .o-crop--#{$antecedent}\:#{$consequent} {
+    .o-crop--#{$antecedent}-#{$consequent} {
       padding-bottom: ($consequent/$antecedent) * 100%;
     }
   }

@@ -1,8 +1,6 @@
-/*
- |--------------------------------------------------------------------------
- |  Tools
- |--------------------------------------------------------------------------
- */
+// ==========================================================================
+//   Tools
+// ==========================================================================
 
 // Functions
 @import 'tools.function.borderradius';
@@ -14,8 +12,10 @@
 @import 'tools.function.pow';
 @import 'tools.function.space';
 @import 'tools.function.math';
-@import 'tools.function.strings';
-@import 'tools.function.svg';
+@import 'tools.function.str-replace';
+@import 'tools.function.svg-url';
+@import 'tools.function.svg-color-modifier';
+@import 'tools.function.svg-class-replace';
 
 // Mixins
 @import 'tools.mixin.filter';

@@ -1,12 +1,10 @@
-/*
- |--------------------------------------------------------------------------
- |  Calc EM
- |--------------------------------------------------------------------------
- */
+// ==========================================================================
+//   Calc EM
+// ==========================================================================
 
-$bk-browserContext: 16;
+$mw-browserContext: 16;
 
-@function calc-em($pixels, $context: $bk-browserContext) {
+@function calc-em($pixels, $context: $mw-browserContext) {
   @if (unitless($pixels)) {
     $pixels: $pixels * 1px;
   }
@@ -17,4 +15,3 @@ $bk-browserContext: 16;
 
   @return $pixels / $context * 1em;
 }
-

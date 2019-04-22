@@ -13,7 +13,7 @@
   display: inline-block;
 }
 
-$bk-list-inline-delimiter: ',\00A0' !default;
+$mw-list-inline-delimiter: ',\00A0' !default;
 
 .o-listInline--delimited {
   font-size: 0;
@@ -24,8 +24,7 @@ $bk-list-inline-delimiter: ',\00A0' !default;
 
   > .o-listInline__item + .o-listInline__item {
     &::before {
-      content: ''#{$bk-list-inline-delimiter}'';
+      content: ''#{$mw-list-inline-delimiter}'';
     }
   }
 }
-

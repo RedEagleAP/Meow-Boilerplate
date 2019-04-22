@@ -4,10 +4,6 @@
  |--------------------------------------------------------------------------
  */
 body {
-  // @include ms-respond(font-size, 0);
-  // line-height: $bk-baseLineHeight;
-
-  /* stylelint-disable */
   .js &.no-hover > * {
     pointer-events: none;
   }
@@ -16,5 +12,4 @@ body {
     height: 100vh;
     overflow: hidden;
   }
-  /* stylelint-enable */
 }

@@ -1,15 +1,13 @@
-/*
- |--------------------------------------------------------------------------
- |  Easings
- |--------------------------------------------------------------------------
- */
+// ==========================================================================
+//   Easings
+// ==========================================================================
 
 @function ease($key) {
-  @if map-has-key($bk-easings, $key) {
-    @return map-get($bk-easings, $key);
+  @if map-has-key($mw-easings, $key) {
+    @return map-get($mw-easings, $key);
   }
 
-  @warn "Unknown '#{$key}' in #{map-keys($bk-easings)}";
+  @warn "Unknown '#{$key}' in #{map-keys($mw-easings)}";
   @return null;
 }
 
