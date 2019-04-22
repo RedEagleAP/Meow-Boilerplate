@@ -1,8 +1,8 @@
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
-import CleanWebpackPlugin from 'clean-webpack-plugin'
-const merge = require('webpack-merge')
-const utils = require('./utils')
-const baseWebpackConfig = require('./webpack.config.base.babel.js')
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import CleanWebpackPlugin from 'clean-webpack-plugin';
+const merge = require('webpack-merge');
+const utils = require('./utils');
+const baseWebpackConfig = require('./webpack.config.base.babel.js');
 
 /*
  |--------------------------------------------------------------------------
@@ -24,6 +24,6 @@ const prodWebpackConfig = merge(baseWebpackConfig.default, {
       logLevel: 'info',
     }),
   ],
-})
+});
 
-module.exports = prodWebpackConfig
+module.exports = prodWebpackConfig;
