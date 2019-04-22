@@ -3,23 +3,23 @@
  * @description Compress CSS Files in distribution
  */
 
-import kc from '../../config.json'
-import gulp from 'gulp'
-import gulpLoadPlugins from 'gulp-load-plugins'
+import meow from '../../config.json';
+import gulp from 'gulp';
+import gulpLoadPlugins from 'gulp-load-plugins';
 
-const $ = gulpLoadPlugins()
+const $ = gulpLoadPlugins();
 
 const minifyCssTask = () => {
   return gulp
-    .src(kc.dist.css + '*.css')
+    .src(meow.dist.css + '*.css')
     .pipe($.postcss())
     .pipe(
       $.size({
         title: '>>> CSS File Size: ',
-      }),
+      })
     )
-    .pipe(gulp.dest(kc.dist.css))
-}
+    .pipe(gulp.dest(meow.dist.css));
+};
 
-gulp.task('minify:css', minifyCssTask)
-module.exports = minifyCssTask
+gulp.task('minify:css', minifyCssTask);
+module.exports = minifyCssTask;

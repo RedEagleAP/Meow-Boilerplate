@@ -7,29 +7,29 @@
  * @param   {string} button Classname from the Trigger Element
  */
 const offCanvasToggle = (open, close) => {
-  const buttonClose = document.getElementsByClassName(close)
-  const buttonOpen = document.getElementsByClassName(open)
-  const root = document.querySelector('.c-offCanvas')
+  const buttonClose = document.getElementsByClassName(close);
+  const buttonOpen = document.getElementsByClassName(open);
+  const root = document.querySelector('.c-offCanvas');
 
   if (buttonClose.length > 0) {
     // Close Event
     buttonClose[0].addEventListener('click', (event) => {
       // Prevent Default Clicks
-      event.preventDefault()
+      event.preventDefault();
 
       // Toggle the ToggleClass
-      root.classList.remove('offcanvas-active')
-    })
+      root.classList.remove('offcanvas-active');
+    });
 
     // Open Event
     buttonOpen[0].addEventListener('click', (event) => {
       // Prevent Default Clicks
-      event.preventDefault()
+      event.preventDefault();
 
       // Toggle the ToggleClass
-      root.classList.add('offcanvas-active')
-    })
+      root.classList.add('offcanvas-active');
+    });
   }
-}
+};
 
-export default offCanvasToggle
+export default offCanvasToggle;

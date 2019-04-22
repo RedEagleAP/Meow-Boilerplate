@@ -1,41 +1,45 @@
-import kc from '../../config.json'
+/**
+ * Global Minify All Files
+ */
+
+import meow from '../../config.json';
 
 const globalMinifyCheck = () => {
   const gminify = {
     js: false,
     css: false,
     image: false,
-  }
+  };
 
   // Global Minifier - will be activated on the Publish Task. Only active when the regular minfier is deactivated
   if (
-    kc.minify.automatic.jsFiles === false &&
-    kc.minify.automatic.jsCombine === false &&
-    kc.minify.automatic.jsCopy === false
+    meow.minify.automatic.jsFiles === false &&
+    meow.minify.automatic.jsCombine === false &&
+    meow.minify.automatic.jsCopy === false
   ) {
-    gminify.js = true
+    gminify.js = true;
   } else {
-    gminify.js = false
+    gminify.js = false;
   }
 
-  if (kc.minify.automatic.jsFiles === false) {
-    gminify.css = true
+  if (meow.minify.automatic.jsFiles === false) {
+    gminify.css = true;
   } else {
-    gminify.css = false
+    gminify.css = false;
   }
 
   if (
-    kc.minify.automatic.vector === false &&
-    kc.minify.automatic.bitmaps === false &&
-    kc.minify.automatic.vectorSprite === false &&
-    kc.minify.automatic.bitmapSprite === false
+    meow.minify.automatic.vector === false &&
+    meow.minify.automatic.bitmaps === false &&
+    meow.minify.automatic.vectorSprite === false &&
+    meow.minify.automatic.bitmapSprite === false
   ) {
-    gminify.image = true
+    gminify.image = true;
   } else {
-    gminify.image = false
+    gminify.image = false;
   }
 
-  return gminify
-}
+  return gminify;
+};
 
-module.exports = globalMinifyCheck
+module.exports = globalMinifyCheck;

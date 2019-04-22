@@ -3,24 +3,24 @@
  * @description Build a set of Favicons
  */
 
-import kc from '../../config.json'
-import pkg from '../../package.json'
-import gulp from 'gulp'
-import gulpLoadPlugins from 'gulp-load-plugins'
+import meow from '../../config.json';
+import pkg from '../../package.json';
+import gulp from 'gulp';
+import gulpLoadPlugins from 'gulp-load-plugins';
 
-const $ = gulpLoadPlugins()
+const $ = gulpLoadPlugins();
 
 const buildFaviconTask = () => {
   return gulp
-    .src(kc.src.system + 'favicon.png')
+    .src(meow.src.system + 'favicon.png')
     .pipe(
       $.favicons({
         appName: pkg.name,
         appDescription: pkg.description,
         developerName: pkg.author.name,
         developerURL: pkg.author.url,
-        background: kc.src.baseconf.themecolor,
-        path: kc.dist.cssimgRoot + 'system/',
+        background: meow.src.baseconf.themecolor,
+        path: meow.dist.cssimgRoot + 'system/',
         url: '',
         display: 'standalone',
         orientation: 'portrait',
@@ -39,11 +39,11 @@ const buildFaviconTask = () => {
           windows: true,
           yandex: false,
         },
-        html: kc.src.system + 'favicon.html',
-      }),
+        html: meow.src.system + 'favicon.html',
+      })
     )
-    .pipe(gulp.dest(kc.src.system + 'favicons/'))
-}
+    .pipe(gulp.dest(meow.src.system + 'favicons/'));
+};
 
-gulp.task('build:favicon', buildFaviconTask)
-module.exports = buildFaviconTask
+gulp.task('build:favicon', buildFaviconTask);
+module.exports = buildFaviconTask;

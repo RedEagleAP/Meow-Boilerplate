@@ -4,40 +4,42 @@
  * @description Compile Twig Files to HTML or copy Structure Files (usefull for PHP or Source Files for a CMS Compiler.
  */
 
-import kc from '../../config.json'
-import pkg from '../../package.json'
-import gulp from 'gulp'
-import gutil from 'gulp-util'
-import gulpLoadPlugins from 'gulp-load-plugins'
-import errorHandler from '../lib/errorHandler'
-import yargs from 'yargs'
+import meow from '../../config.json';
+import pkg from '../../package.json';
+import gulp from 'gulp';
+import gutil from 'gulp-util';
+import gulpLoadPlugins from 'gulp-load-plugins';
+import errorHandler from '../lib/errorHandler';
+import yargs from 'yargs';
 
-const args = yargs.argv
-const $ = gulpLoadPlugins()
+const args = yargs.argv;
+const $ = gulpLoadPlugins();
 
 const compilerHtmlTask = () => {
-  const siteEnv = args.env || 'development'
+  const siteEnv = args.env || 'development';
 
   // Set Base Locals
   const templateLocals = {
-    siteTitle: kc.template.globalTitle,
+    siteTitle: meow.template.globalTitle,
     cssName: pkg.cssFileName,
-    assetsCss: kc.templatePath.css,
-    assetsImg: kc.templatePath.contentimage,
-    assetsJs: kc.templatePath.js,
-    assetsCssImg: kc.templatePath.cssimage,
+    assetsCss: meow.templatePath.css,
+    assetsImg: meow.templatePath.contentimage,
+    assetsJs: meow.templatePath.js,
+    assetsCssImg: meow.templatePath.cssimage,
     environment: siteEnv,
-  }
+  };
 
   // Twig Compiler
-  if (kc.template.compiler) {
+  if (meow.template.compiler) {
     // TWIG Compiler
     return gulp
-      .src(kc.src.template + '**/[^_]*.{html,twig,rss}')
+      .src(meow.src.template + '**/[^_]*.{html,twig,pug,rss}')
       .pipe(
         global.checkChanged === true
-          ? $.changed(kc.dist.markup, { extension: '.{html,twig,rss}' })
-          : gutil.noop(),
+          ? $.changed(meow.dist.markup, {
+              extension: '.{html,twig,pug,rss}',
+            })
+          : gutil.noop()
       )
       .pipe($.plumber())
       .pipe($.twig({ data: templateLocals }))
@@ -46,17 +48,21 @@ const compilerHtmlTask = () => {
         $.htmlPrettify({
           indent_char: ' ',
           indent_size: 2,
-        }),
+        })
       )
-      .pipe(gulp.dest(kc.dist.markup))
+      .pipe(gulp.dest(meow.dist.markup));
   } else {
     // Simple Copy Files
     gulp
-      .src([kc.src.structure + '**/**', kc.src.structure + '**/.*'])
-      .pipe(global.checkChanged === true ? $.changed(kc.dist.markup) : gutil.noop())
-      .pipe(gulp.dest(kc.dist.markup))
+      .src([meow.src.structure + '**/**', meow.src.structure + '**/.*'])
+      .pipe(
+        global.checkChanged === true
+          ? $.changed(meow.dist.markup)
+          : gutil.noop()
+      )
+      .pipe(gulp.dest(meow.dist.markup));
   }
-}
+};
 
-gulp.task('compiler:html', compilerHtmlTask)
-module.exports = compilerHtmlTask
+gulp.task('compiler:html', compilerHtmlTask);
+module.exports = compilerHtmlTask;

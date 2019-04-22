@@ -1,9 +1,9 @@
 const failsave = (fn) => {
   try {
-    fn()
+    fn();
   } catch (err) {
-    console.error(err) // eslint-disable-line
+    console.error(err); // eslint-disable-line
   }
-}
+};
 
-export default failsave
+export default failsave;

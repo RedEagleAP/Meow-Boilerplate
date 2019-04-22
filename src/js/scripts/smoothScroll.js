@@ -3,7 +3,7 @@
 //  https://github.com/cferdinandi/smooth-scroll
 //  --------------------------------------------------------
 
-import SmoothScroll from 'smooth-scroll'
+import SmoothScroll from 'smooth-scroll';
 
 const scroll = new SmoothScroll('[data-scroll]', {
   // Selectors
@@ -15,7 +15,7 @@ const scroll = new SmoothScroll('[data-scroll]', {
   speed: 250,
 
   // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
-  offset: 0,
+  offset: 50,
 
   // Easing pattern to use
   easing: 'easeInOutCubic',
@@ -23,18 +23,18 @@ const scroll = new SmoothScroll('[data-scroll]', {
   // Callback API
   before() {}, // Callback to run before scroll
   after() {}, // Callback to run after scroll
-})
+});
 
 if (window.location.hash) {
   setTimeout(() => {
     // Get the anchor
-    const anchor = document.querySelector(window.location.hash)
+    const anchor = document.querySelector(window.location.hash);
 
     // Get the toggle (if one exists)
-    const toggle = document.querySelector(`a[href*="${window.location.hash}"]`)
+    const toggle = document.querySelector(`a[href*="${window.location.hash}"]`);
 
     // Any custom options you want to use would go here
-    const options = {}
-    SmoothScroll.animateScroll(anchor, toggle, options)
-  }, 250)
+    const options = {};
+    SmoothScroll.animateScroll(anchor, toggle, options);
+  }, 1000);
 }

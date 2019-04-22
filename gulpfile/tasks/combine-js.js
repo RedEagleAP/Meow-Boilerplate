@@ -4,18 +4,18 @@
  * Added as Alternative to Browserify
  */
 
-import kc from '../../config.json'
-import gulp from 'gulp'
-import gulpLoadPlugins from 'gulp-load-plugins'
+import meow from '../../config.json';
+import gulp from 'gulp';
+import gulpLoadPlugins from 'gulp-load-plugins';
 
-const $ = gulpLoadPlugins()
+const $ = gulpLoadPlugins();
 
 const combineJsTask = () => {
   return gulp
-    .src(kc.files.jsCombine.files)
-    .pipe($.concat(kc.files.jsCombine.filename))
-    .pipe(gulp.dest(kc.dist.js))
-}
+    .src(meow.files.jsCombine.files)
+    .pipe($.concat(meow.files.jsCombine.filename))
+    .pipe(gulp.dest(meow.dist.js));
+};
 
-gulp.task('combine:js', combineJsTask)
-module.exports = combineJsTask
+gulp.task('combine:js', combineJsTask);
+module.exports = combineJsTask;

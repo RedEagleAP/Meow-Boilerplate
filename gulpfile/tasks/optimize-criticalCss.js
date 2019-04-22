@@ -3,23 +3,23 @@
  * @description Generate Inline CSS for the Above the fold optimization
  */
 
-import kc from '../../config.json'
-import gulp from 'gulp'
-import critical from 'critical'
+import meow from '../../config.json';
+import gulp from 'gulp';
+import critical from 'critical';
 
 const criticalCss = () => {
-  kc.cssabove.sources.forEach(function(item) {
+  meow.cssabove.sources.forEach(function(item) {
     return critical.generate({
-      inline: kc.cssabove.inline,
-      base: kc.dist.markup,
+      inline: meow.cssabove.inline,
+      base: meow.dist.markup,
       src: item,
-      dest: kc.templatePath.css + kc.cssabove.destFilename,
-      minify: kc.cssabove.minify,
-      width: kc.cssabove.width,
-      height: kc.cssabove.height,
-    })
-  })
-}
+      dest: meow.templatePath.css + meow.cssabove.destFilename,
+      minify: meow.cssabove.minify,
+      width: meow.cssabove.width,
+      height: meow.cssabove.height,
+    });
+  });
+};
 
-gulp.task('optimize:criticalCss', criticalCss)
-module.exports = criticalCss
+gulp.task('optimize:criticalCss', criticalCss);
+module.exports = criticalCss;

@@ -4,14 +4,14 @@
  * Inline Images (SVG, PNG, JPG, GIF)
  */
 
-import kc from '../../config.json'
-import gulp from 'gulp'
-import copyImages from '../lib/copyImages'
+import meow from '../../config.json';
+import gulp from 'gulp';
+import copyImages from '../lib/copyImages';
 
 const copyContentimagesTask = () => {
   // Call the Function
-  copyImages(kc.src.contentimage, kc.dist.contentimage)
-}
+  copyImages(meow.src.contentimage, meow.dist.contentimage);
+};
 
-gulp.task('copy:contentimages', copyContentimagesTask)
-module.exports = copyContentimagesTask
+gulp.task('copy:contentimages', copyContentimagesTask);
+module.exports = copyContentimagesTask;

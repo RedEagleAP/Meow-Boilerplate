@@ -3,25 +3,27 @@
  * watch the working dirs - activates the compilers and refresh the browser
  */
 
-import kc from '../../config.json'
-import gulp from 'gulp'
-import gutil from 'gulp-util'
-import browserSync from 'browser-sync'
-import gulpLoadPlugins from 'gulp-load-plugins'
-import errorHandler from '../lib/errorHandler'
-import yargs from 'yargs'
-import ansiHTML from 'ansi-html'
-import api from 'stylelint'
+import meow from '../../config.json';
+import gulp from 'gulp';
+import gutil from 'gulp-util';
+import browserSync from 'browser-sync';
+import gulpLoadPlugins from 'gulp-load-plugins';
+import errorHandler from '../lib/errorHandler';
+import yargs from 'yargs';
+import ansiHTML from 'ansi-html';
+import api from 'stylelint';
+import sortingScssTask from './sorting-css';
 
-const args = yargs.argv
-const $ = gulpLoadPlugins()
+const args = yargs.argv;
+const $ = gulpLoadPlugins();
 
 // Gulp Task
 const compilerCssTask = () => {
-  const env = args.env || 'development'
+  const env = args.env || 'development';
+  sortingScssTask();
 
   return gulp
-    .src([kc.src.style + '**/*.scss', kc.src.style + '**/*.sass'])
+    .src([meow.src.style + '**/*.scss', meow.src.style + '**/*.sass'])
     .pipe(env === 'development' ? $.sourcemaps.init() : gutil.noop())
     .pipe(
       env === 'development'
@@ -32,7 +34,7 @@ const compilerCssTask = () => {
               { formatter: 'string', console: true },
               {
                 formatter(results) {
-                  if (!api.formatters.string(results).length) return
+                  if (!api.formatters.string(results).length) return;
                   const warning = `
                     <div class="bs-fullscreen"
                       style="position: fixed;
@@ -40,37 +42,37 @@ const compilerCssTask = () => {
                       left: 0;
                       width: 100%;
                       background: rgba(0,0,0,.85);
-                      height: 50vh;
-                      max-height: 200px;
+                      height: 40vh;
+                      max-height: 300px;
                       overflow-y: scroll;
                       color: #e8e8e8;
                       text-align: left;
                       white-space: pre;
-                      font-family: Menlo, Consolas, monospace;
+                      font-family: Roboto, Consolas, monospace;
                       font-size: 13px;
                       padding: 10px;
                       line-height: 1.2;">
                       ${ansiHTML(api.formatters.string(results))}
-                    </div>`
-                  browserSync.notify(warning, 100000)
+                    </div>`;
+                  browserSync.notify(warning, 50000);
                 },
               },
             ],
           })
-        : gutil.noop(),
+        : gutil.noop()
     )
     .pipe($.sass({}).on('error', errorHandler))
-    .pipe($.postcss(kc))
+    .pipe($.postcss(meow))
     .pipe(
       env === 'development'
         ? $.size({
             title: '>>> CSS File Size: ',
           })
-        : gutil.noop(),
+        : gutil.noop()
     )
     .pipe(env === 'development' ? $.sourcemaps.write('.') : gutil.noop())
-    .pipe(gulp.dest(kc.dist.css))
-}
+    .pipe(gulp.dest(meow.dist.css));
+};
 
-gulp.task('compiler:css', compilerCssTask)
-module.exports = compilerCssTask
+gulp.task('compiler:css', compilerCssTask);
+module.exports = compilerCssTask;

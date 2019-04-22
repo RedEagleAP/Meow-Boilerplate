@@ -6,11 +6,11 @@
  *  https://babeljs.io/docs/learn-es2015/
  */
 
-'use strict'
+'use strict';
 
 // Define Global Vars
-global.checkChanged = true
+global.checkChanged = true;
 
-const requireDir = require('require-dir')
+const requireDir = require('require-dir');
 
-requireDir('./gulpfile/tasks', { recurse: true })
+requireDir('./gulpfile/tasks', { recurse: true });

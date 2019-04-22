@@ -1,11 +1,11 @@
-import webpack from 'webpack'
-import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin'
+import webpack from 'webpack';
+import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 
 // import WriteFilePlugin from 'write-file-webpack-plugin'
 
-import utils from './utils'
-const baseWebpackConfig = require('./webpack.config.base.babel.js')
-const merge = require('webpack-merge')
+import utils from './utils';
+const baseWebpackConfig = require('./webpack.config.base.babel.js');
+const merge = require('webpack-merge');
 
 /*
  |--------------------------------------------------------------------------
@@ -14,7 +14,7 @@ const merge = require('webpack-merge')
  */
 
 const hotClient =
-  'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true&overlay=true'
+  'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true&overlay=true';
 
 /*
  |--------------------------------------------------------------------------
@@ -22,9 +22,11 @@ const hotClient =
  | Admin Javascript and FrontEnd JavaScript
  |--------------------------------------------------------------------------
  */
-let entries = utils.entryPoints
+let entries = utils.entryPoints;
 
-Object.keys(entries).forEach((entry) => (entries[entry] = [hotClient].concat(entries[entry])))
+Object.keys(entries).forEach(
+  (entry) => (entries[entry] = [hotClient].concat(entries[entry]))
+);
 
 const devWebpackConfig = merge(baseWebpackConfig.default, {
   mode: 'development',
@@ -48,5 +50,5 @@ const devWebpackConfig = merge(baseWebpackConfig.default, {
     //   test: /^(?!.+(?:hot-update.(js|json))).+$/
     // })
   ],
-})
-module.exports = devWebpackConfig
+});
+module.exports = devWebpackConfig;

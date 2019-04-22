@@ -3,18 +3,18 @@
  * @description Compress all Javascript Files in the dist folder
  */
 
-import kc from '../../config.json'
-import gulp from 'gulp'
-import gulpLoadPlugins from 'gulp-load-plugins'
+import meow from '../../config.json';
+import gulp from 'gulp';
+import gulpLoadPlugins from 'gulp-load-plugins';
 
-const $ = gulpLoadPlugins()
+const $ = gulpLoadPlugins();
 
 const minifyJsTask = () => {
   return gulp
-    .src(kc.dist.js + '*.js')
-    .pipe($.uglify(kc.minify.javascript.options))
-    .pipe(gulp.dest(kc.dist.js))
-}
+    .src(meow.dist.js + '*.js')
+    .pipe($.uglify(meow.minify.javascript.options))
+    .pipe(gulp.dest(meow.dist.js));
+};
 
-gulp.task('minify:js', minifyJsTask)
-module.exports = minifyJsTask
+gulp.task('minify:js', minifyJsTask);
+module.exports = minifyJsTask;

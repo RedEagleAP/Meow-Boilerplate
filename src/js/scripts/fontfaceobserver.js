@@ -1,7 +1,7 @@
 // import FontFaceObserver from 'fontfaceobserver'
 
 // Disable if you use WebFonts
-document.documentElement.className += ' wf-loaded'
+document.documentElement.className += ' wf-loaded';
 
 /**
  * Check if the User already visited the site and the Fonts were loaded

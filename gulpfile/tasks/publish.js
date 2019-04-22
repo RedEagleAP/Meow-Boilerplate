@@ -5,19 +5,19 @@
  * Compress Files
  */
 
-import gulp from 'gulp'
-import runSequence from 'run-sequence'
+import gulp from 'gulp';
+import runSequence from 'run-sequence';
 
 // Overwrite the Changed Check
-global.checkChanged = true
+global.checkChanged = true;
 
 const publishTask = (cb) => {
   runSequence(
     ['version:bump'],
     ['minify:js', 'minify:contentimages', 'minify:inlineimages', 'minify:css'],
-    cb,
-  )
-}
+    cb
+  );
+};
 
-gulp.task('publish', publishTask)
-module.exports = publishTask
+gulp.task('publish', publishTask);
+module.exports = publishTask;

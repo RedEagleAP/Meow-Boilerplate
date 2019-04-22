@@ -4,16 +4,16 @@
  * Inline Images (SVG, PNG, JPG, GIF)
  */
 
-import kc from '../../config.json'
-import gulp from 'gulp'
-import gulpLoadPlugins from 'gulp-load-plugins'
-import minifyImages from '../lib/minifyImage'
+import meow from '../../config.json';
+import gulp from 'gulp';
+import gulpLoadPlugins from 'gulp-load-plugins';
+import minifyImages from '../lib/minifyImage';
 
-const $ = gulpLoadPlugins()
+const $ = gulpLoadPlugins();
 
 const minifyContentimagesTask = () => {
-  minifyImages(kc.dist.contentimage, kc.dist.contentimage)
-}
+  minifyImages(meow.dist.contentimage, meow.dist.contentimage);
+};
 
-gulp.task('minify:contentimages', minifyContentimagesTask)
-module.exports = minifyContentimagesTask
+gulp.task('minify:contentimages', minifyContentimagesTask);
+module.exports = minifyContentimagesTask;

@@ -3,31 +3,31 @@
  * @description Refresh the Browser after File Change.
  */
 
-import kc from '../../config.json'
-import gulp from 'gulp'
-import browserSync from 'browser-sync'
-import webpack from 'webpack'
-import webpackDevMiddleware from 'webpack-dev-middleware'
-import webpackHotMiddleware from 'webpack-hot-middleware'
-import webpackSettings from '../../webpack/webpack.dev.babel'
+import meow from '../../config.json';
+import gulp from 'gulp';
+import browserSync from 'browser-sync';
+import webpack from 'webpack';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
+import webpackSettings from '../../webpack/webpack.dev.babel';
 
-const bundler = webpack(webpackSettings)
+const bundler = webpack(webpackSettings);
 
 const browserSyncTask = () => {
   // Build a condition when Proxy is active
-  let bsProxy
-  let bsServer
+  let bsProxy;
+  let bsServer;
 
   // Condition for Proxy
-  if (kc.browsersync.proxy) {
+  if (meow.browsersync.proxy) {
     bsProxy = {
-      target: kc.browsersync.proxy,
+      target: meow.browsersync.proxy,
       ws: true,
-    }
-    bsServer = false
+    };
+    bsServer = false;
   } else {
-    bsProxy = false
-    bsServer = { baseDir: kc.dist.browserSyncDir }
+    bsProxy = false;
+    bsServer = { baseDir: meow.dist.browserSyncDir };
   }
 
   // Browser Sync
@@ -74,16 +74,16 @@ const browserSyncTask = () => {
     },
 
     server: bsServer,
-    https: kc.browsersync.https,
-    open: kc.browsersync.openbrowser,
+    https: meow.browsersync.https,
+    open: meow.browsersync.openbrowser,
     files: [
-      `${kc.dist.js}**/*.js`,
-      `${kc.dist.css}**/*.css`,
-      `${kc.dist.base}**/*.{php,html}`,
-      `${kc.dist.cssimg}**/*.{jpg,gif,png,svg}`,
+      `${meow.dist.js}**/*.js`,
+      `${meow.dist.css}**/*.css`,
+      `${meow.dist.base}**/*.{php,html}`,
+      `${meow.dist.cssimg}**/*.{jpg,gif,png,svg}`,
     ],
-  })
-}
+  });
+};
 
-gulp.task('browser-sync', browserSyncTask)
-module.exports = browserSyncTask
+gulp.task('browser-sync', browserSyncTask);
+module.exports = browserSyncTask;
