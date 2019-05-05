@@ -6,10 +6,10 @@ import meow from '../../config.json';
 import gulp from 'gulp';
 import copyImages from '../lib/copyImages';
 
-const copyBitmapsTask = () => {
+function copyBitmapsTask(cb) {
   // Call the Function
   copyImages(meow.src.images.bitmaps, meow.dist.bitmaps);
-};
+  cb();
+}
 
-gulp.task('copy:bitmaps', copyBitmapsTask);
-module.exports = copyBitmapsTask;
+export default copyBitmapsTask;

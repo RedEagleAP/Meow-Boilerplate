@@ -11,9 +11,10 @@ import minifyImages from '../lib/minifyImage';
 
 const $ = gulpLoadPlugins();
 
-const minifyInlineimagesTask = () => {
+function minifyInlineimagesTask(cb) {
+  // Call the Function
   minifyImages(meow.dist.cssimg, meow.dist.cssimg);
-};
+  cb();
+}
 
-gulp.task('minify:inlineimages', minifyInlineimagesTask);
-module.exports = minifyInlineimagesTask;
+export default minifyInlineimagesTask;

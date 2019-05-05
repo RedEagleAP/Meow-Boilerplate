@@ -9,8 +9,8 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 
 const $ = gulpLoadPlugins();
 
-const minifyCssTask = () => {
-  return gulp
+const minifyCssTask = (cb) => {
+  gulp
     .src(meow.dist.css + '*.css')
     .pipe($.postcss())
     .pipe(
@@ -19,7 +19,7 @@ const minifyCssTask = () => {
       })
     )
     .pipe(gulp.dest(meow.dist.css));
+  cb();
 };
 
-gulp.task('minify:css', minifyCssTask);
-module.exports = minifyCssTask;
+export default minifyCssTask;

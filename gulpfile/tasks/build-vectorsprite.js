@@ -10,7 +10,7 @@ import svgo from 'imagemin-svgo';
 
 const $ = gulpLoadPlugins();
 
-const buildVectorSpriteTask = () => {
+function buildVectorSpriteTask() {
   return gulp
     .src(meow.src.images.vectorSprite.files + '**/*.svg')
     .pipe(
@@ -56,7 +56,6 @@ const buildVectorSpriteTask = () => {
       })
     )
     .pipe(gulp.dest('./'));
-};
+}
 
-gulp.task('build:vectorSprite', buildVectorSpriteTask);
-module.exports = buildVectorSpriteTask;
+export default buildVectorSpriteTask;

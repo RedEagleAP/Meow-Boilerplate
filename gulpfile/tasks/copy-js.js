@@ -10,16 +10,15 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 
 const $ = gulpLoadPlugins();
 
-const copyJsTask = () => {
+function copyJsTask() {
   meow.files.jsCopy.forEach(function(item) {
-    gulp
+    return gulp
       .src(item)
       .pipe(
         global.checkChanged === true ? $.changed(meow.dist.js) : gutil.noop()
       )
       .pipe(gulp.dest(meow.dist.js));
   });
-};
+}
 
-gulp.task('copy:js', copyJsTask);
-module.exports = copyJsTask;
+export default copyJsTask;

@@ -12,17 +12,14 @@ import errorHandler from '../lib/errorHandler';
 import yargs from 'yargs';
 import ansiHTML from 'ansi-html';
 import api from 'stylelint';
-import sortingScssTask from './sorting-css';
 
 const args = yargs.argv;
 const $ = gulpLoadPlugins();
 
-// Gulp Task
-const compilerCssTask = () => {
+const compilerCssTask = (cb) => {
   const env = args.env || 'development';
-  sortingScssTask();
 
-  return gulp
+  gulp
     .src([meow.src.style + '**/*.scss', meow.src.style + '**/*.sass'])
     .pipe(env === 'development' ? $.sourcemaps.init() : gutil.noop())
     .pipe(
@@ -72,7 +69,7 @@ const compilerCssTask = () => {
     )
     .pipe(env === 'development' ? $.sourcemaps.write('.') : gutil.noop())
     .pipe(gulp.dest(meow.dist.css));
+  cb();
 };
 
-gulp.task('compiler:css', compilerCssTask);
-module.exports = compilerCssTask;
+export default compilerCssTask;

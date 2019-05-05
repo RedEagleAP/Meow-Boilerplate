@@ -8,10 +8,10 @@ import meow from '../../config.json';
 import gulp from 'gulp';
 import copyImages from '../lib/copyImages';
 
-const copyContentimagesTask = () => {
+function copyContentimagesTask(cb) {
   // Call the Function
   copyImages(meow.src.contentimage, meow.dist.contentimage);
-};
+  cb();
+}
 
-gulp.task('copy:contentimages', copyContentimagesTask);
-module.exports = copyContentimagesTask;
+export default copyContentimagesTask;

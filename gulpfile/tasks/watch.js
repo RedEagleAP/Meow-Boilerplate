@@ -6,20 +6,27 @@
 import meow from '../../config.json';
 import gulp from 'gulp';
 import watch from 'gulp-watch';
-import templateFiles from '../lib/templateFiles';
 import path from 'path';
+import templateFiles from '../lib/templateFiles';
+import compilerCssTask from './compile-css';
+import compilerHtmlTask from './compile-html';
 
-const watchTask = () => {
+function watchTask(cb) {
   // Watch the SCSS Folder for changes - compile CSS
   gulp.watch(
     [meow.src.style + '**/**/*.scss', meow.src.style + '**/**/*.sass'],
     { interval: 500 },
-    [['compiler:css']]
+    gulp.series(compilerCssTask)
   );
 
   // Watch the Structure
-  gulp.watch([templateFiles()], { interval: 500 }, ['compiler:html']);
-};
+  gulp.watch(
+    [templateFiles()],
+    { interval: 500 },
+    gulp.series(compilerHtmlTask)
+  );
 
-gulp.task('watch', watchTask);
-module.exports = watchTask;
+  cb();
+}
+
+export default watchTask;

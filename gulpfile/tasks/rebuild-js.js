@@ -4,11 +4,11 @@
  */
 
 import gulp from 'gulp';
-import runSequence from 'run-sequence';
+import copyJsTask from './copy-js';
 
 const rebuildJsTask = (cb) => {
-  runSequence(['copy:js'], cb);
+  gulp.series(copyJsTask);
+  cb();
 };
 
-gulp.task('rebuild:js', rebuildJsTask);
-module.exports = rebuildJsTask;
+export default rebuildJsTask;

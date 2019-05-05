@@ -6,18 +6,25 @@
  */
 
 import gulp from 'gulp';
-import runSequence from 'run-sequence';
+import versionBump from './version-bump';
+import minifyJsTask from './minify-js';
+import minifyContentimagesTask from './minify-contentimages';
+import minifyInlineimagesTask from './minify-inlineimages';
+import minifyCssTask from './minify-css';
 
-// Overwrite the Changed Check
-global.checkChanged = true;
+const publishTask = gulp.series(
+  (cb) => {
+    // Overwrite the Changed Check
+    global.checkChanged = true;
+    cb();
+  },
+  versionBump,
+  gulp.parallel(
+    minifyJsTask,
+    minifyContentimagesTask,
+    minifyInlineimagesTask,
+    minifyCssTask
+  )
+);
 
-const publishTask = (cb) => {
-  runSequence(
-    ['version:bump'],
-    ['minify:js', 'minify:contentimages', 'minify:inlineimages', 'minify:css'],
-    cb
-  );
-};
-
-gulp.task('publish', publishTask);
-module.exports = publishTask;
+export default publishTask;

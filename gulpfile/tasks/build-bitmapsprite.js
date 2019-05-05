@@ -9,8 +9,8 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 
 const $ = gulpLoadPlugins();
 
-const buildBitmapSpriteTaks = () => {
-  gulp
+function buildBitmapSpriteTask() {
+  return gulp
     .src(meow.src.images.bitmapSprite.files + '**/*.png')
     .pipe(
       $.if(
@@ -30,7 +30,6 @@ const buildBitmapSpriteTaks = () => {
         gulp.dest(meow.src.style + 'maps/')
       )
     );
-};
+}
 
-gulp.task('build:bitmapSprite', buildBitmapSpriteTaks);
-module.exports = buildBitmapSpriteTaks;
+export default buildBitmapSpriteTask;

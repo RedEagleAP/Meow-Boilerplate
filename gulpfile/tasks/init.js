@@ -3,25 +3,30 @@
  */
 
 import gulp from 'gulp';
-import runSequence from 'run-sequence';
+import sassdocGenerateTask from './sassdoc-generate';
+import copyLaunchTask from './copy-launch';
+import copyFontsTask from './copy-fonts';
+import rebuildJsTask from './rebuild-js';
+import rebuildImagesTask from './rebuild-images';
+import copyContentimagesTask from './copy-contentimages';
+import compilerCssTask from './compile-css';
+import compilerHtmlTask from './compile-html';
 
-const initTask = (cb) => {
-  // Overwrite the Changed Check
-  global.checkChanged = false;
+const initTask = gulp.series(
+  (cb) => {
+    // Overwrite the Changed Check
+    global.checkChanged = false;
+    cb();
+  },
+  sassdocGenerateTask,
+  gulp.parallel(
+    copyLaunchTask,
+    copyFontsTask,
+    rebuildJsTask,
+    rebuildImagesTask,
+    copyContentimagesTask
+  ),
+  gulp.parallel(compilerCssTask, compilerHtmlTask)
+);
 
-  runSequence(
-    ['sassdoc:generate'],
-    [
-      'copy:launch',
-      'copy:fonts',
-      'rebuild:js',
-      'rebuild:images',
-      'copy:contentimages',
-    ],
-    ['compiler:css', 'compiler:html'],
-    cb
-  );
-};
-
-gulp.task('init', initTask);
-module.exports = initTask;
+export default initTask;

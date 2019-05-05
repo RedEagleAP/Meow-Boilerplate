@@ -15,7 +15,7 @@ import yargs from 'yargs';
 const args = yargs.argv;
 const $ = gulpLoadPlugins();
 
-const compilerHtmlTask = () => {
+function compilerHtmlTask() {
   const siteEnv = args.env || 'development';
 
   // Set Base Locals
@@ -53,7 +53,7 @@ const compilerHtmlTask = () => {
       .pipe(gulp.dest(meow.dist.markup));
   } else {
     // Simple Copy Files
-    gulp
+    return gulp
       .src([meow.src.structure + '**/**', meow.src.structure + '**/.*'])
       .pipe(
         global.checkChanged === true
@@ -62,7 +62,6 @@ const compilerHtmlTask = () => {
       )
       .pipe(gulp.dest(meow.dist.markup));
   }
-};
+}
 
-gulp.task('compiler:html', compilerHtmlTask);
-module.exports = compilerHtmlTask;
+export default compilerHtmlTask;

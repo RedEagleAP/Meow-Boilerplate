@@ -9,12 +9,11 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 
 const $ = gulpLoadPlugins();
 
-const minifyJsTask = () => {
+function minifyJsTask() {
   return gulp
     .src(meow.dist.js + '*.js')
     .pipe($.uglify(meow.minify.javascript.options))
     .pipe(gulp.dest(meow.dist.js));
-};
+}
 
-gulp.task('minify:js', minifyJsTask);
-module.exports = minifyJsTask;
+export default minifyJsTask;

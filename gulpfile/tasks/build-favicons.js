@@ -10,7 +10,7 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 
 const $ = gulpLoadPlugins();
 
-const buildFaviconTask = () => {
+function buildFaviconTask() {
   return gulp
     .src(meow.src.system + 'favicon.png')
     .pipe(
@@ -30,20 +30,19 @@ const buildFaviconTask = () => {
         icons: {
           android: true,
           appleIcon: true,
-          appleStartup: true,
-          coast: true,
+          appleStartup: false,
+          coast: false,
           favicons: true,
           firefox: true,
           opengraph: false,
           twitter: false,
-          windows: true,
+          windows: false,
           yandex: false,
         },
         html: meow.src.system + 'favicon.html',
       })
     )
     .pipe(gulp.dest(meow.src.system + 'favicons/'));
-};
+}
 
-gulp.task('build:favicon', buildFaviconTask);
-module.exports = buildFaviconTask;
+export default buildFaviconTask;

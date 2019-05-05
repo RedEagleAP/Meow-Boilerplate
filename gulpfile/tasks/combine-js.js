@@ -10,12 +10,11 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 
 const $ = gulpLoadPlugins();
 
-const combineJsTask = () => {
+function combineJsTask() {
   return gulp
     .src(meow.files.jsCombine.files)
     .pipe($.concat(meow.files.jsCombine.filename))
     .pipe(gulp.dest(meow.dist.js));
-};
+}
 
-gulp.task('combine:js', combineJsTask);
-module.exports = combineJsTask;
+export default combineJsTask;

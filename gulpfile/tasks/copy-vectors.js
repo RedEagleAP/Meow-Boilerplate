@@ -11,8 +11,8 @@ import svgo from 'imagemin-svgo';
 
 const $ = gulpLoadPlugins();
 
-const copyVectorsTask = () => {
-  gulp
+function copyVectorsTask() {
+  return gulp
     .src(meow.src.images.vectors + '**/*.svg')
     .pipe(
       global.checkChanged === true ? $.changed(meow.dist.vectors) : gutil.noop()
@@ -25,7 +25,6 @@ const copyVectorsTask = () => {
       ])
     )
     .pipe(gulp.dest(meow.dist.vectors));
-};
+}
 
-gulp.task('copy:vectors', copyVectorsTask);
-module.exports = copyVectorsTask;
+export default copyVectorsTask;

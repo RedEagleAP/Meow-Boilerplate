@@ -3,14 +3,13 @@
  * watch the working dirs - activates the compilers and refresh the browser
  */
 import gulp from 'gulp';
-import runSequence from 'run-sequence';
+import watchTask from './watch';
+import browserSyncTask from './browsersync';
 
-const defaultTask = (cb) => {
-  // Overwrite Changed Checks
+const defaultTask = gulp.series((cb) => {
+  // Overwrite the Changed Check
   global.checkChanged = true;
+  cb();
+}, gulp.parallel(watchTask, browserSyncTask));
 
-  runSequence(['watch'], ['browser-sync'], cb);
-};
-
-gulp.task('default', defaultTask);
-module.exports = defaultTask;
+export default defaultTask;

@@ -10,8 +10,8 @@ import sorting from 'postcss-sorting';
 
 const $ = gulpLoadPlugins();
 
-const sortingScssTask = () => {
-  return gulp
+const sortingScssTask = (cb) => {
+  gulp
     .src(meow.src.style + 'app/__modules/*.scss')
     .pipe(
       $.postcss([
@@ -20,6 +20,11 @@ const sortingScssTask = () => {
           order: [
             'custom-properties',
             'dollar-variables',
+            {
+              type: 'at-rule',
+              name: 'extend',
+              hasBlock: false,
+            },
             {
               type: 'at-rule',
               name: 'include',
@@ -199,7 +204,7 @@ const sortingScssTask = () => {
       ])
     )
     .pipe(gulp.dest(meow.src.style + 'app/__modules/'));
+  cb();
 };
 
-gulp.task('sorting:scss', sortingScssTask);
-module.exports = sortingScssTask;
+export default sortingScssTask;

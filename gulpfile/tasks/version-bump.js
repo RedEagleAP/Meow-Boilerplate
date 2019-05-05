@@ -16,7 +16,7 @@ import yargs from 'yargs';
 const args = yargs.argv;
 const $ = gulpLoadPlugins();
 
-const versionBump = () => {
+function versionBump() {
   const type = args.type || 'patch';
   const version = args.version;
   const options = {};
@@ -28,10 +28,9 @@ const versionBump = () => {
   }
 
   return gulp
-    .src(['./bower.json', './package.json'])
+    .src(['./bower.json', './package.json'], { allowEmpty: true })
     .pipe($.bump(options))
     .pipe(gulp.dest('./'));
-};
+}
 
-gulp.task('version:bump', versionBump);
-module.exports = versionBump;
+export default versionBump;

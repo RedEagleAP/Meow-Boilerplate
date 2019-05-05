@@ -10,16 +10,16 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 
 const $ = gulpLoadPlugins();
 
-const copyFontsTask = () => {
+function copyFontsTask(cb) {
   meow.files.fonts.forEach(function(item) {
-    gulp
+    return gulp
       .src(item)
       .pipe(
         global.checkChanged === true ? $.changed(meow.dist.fonts) : gutil.noop()
       )
       .pipe(gulp.dest(meow.dist.fonts));
   });
-};
+  cb();
+}
 
-gulp.task('copy:fonts', copyFontsTask);
-module.exports = copyFontsTask;
+export default copyFontsTask;

@@ -9,11 +9,12 @@ import browserSync from 'browser-sync';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
+// eslint-disable-next-line import/default
 import webpackSettings from '../../webpack/webpack.dev.babel';
 
 const bundler = webpack(webpackSettings);
 
-const browserSyncTask = () => {
+function browserSyncTask(cb) {
   // Build a condition when Proxy is active
   let bsProxy;
   let bsServer;
@@ -83,7 +84,7 @@ const browserSyncTask = () => {
       `${meow.dist.cssimg}**/*.{jpg,gif,png,svg}`,
     ],
   });
-};
+  cb();
+}
 
-gulp.task('browser-sync', browserSyncTask);
-module.exports = browserSyncTask;
+export default browserSyncTask;

@@ -10,9 +10,9 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 
 const $ = gulpLoadPlugins();
 
-const copyLaunchTask = () => {
+function copyLaunchTask(cb) {
   meow.files.launch.forEach((item) => {
-    gulp
+    return gulp
       .src(meow.src.system + item.src)
       .pipe(
         global.checkChanged === true
@@ -21,7 +21,7 @@ const copyLaunchTask = () => {
       )
       .pipe(gulp.dest(meow.dist.base + item.dest));
   });
-};
+  cb();
+}
 
-gulp.task('copy:launch', copyLaunchTask);
-module.exports = copyLaunchTask;
+export default copyLaunchTask;

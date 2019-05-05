@@ -4,20 +4,20 @@
  */
 
 import gulp from 'gulp';
-import runSequence from 'run-sequence';
+import copyBitmapsTask from './copy-bitmaps';
+import copyVectorsTask from './copy-vectors';
+import buildBitmapSpriteTask from './build-bitmapsprite';
+import buildVectorSpriteTask from './build-vectorsprite';
+import buildSymbolCleanupTask from './build-symbolCleanup';
 
-const rebuildImagesTask = (cb) => {
-  runSequence(
-    [
-      'copy:bitmaps',
-      'copy:vectors',
-      'build:bitmapSprite',
-      'build:vectorSprite',
-    ],
-    ['build:symbolCleanup'],
-    cb
-  );
-};
+const rebuildImagesTask = gulp.series(
+  gulp.parallel(
+    copyBitmapsTask,
+    copyVectorsTask,
+    buildBitmapSpriteTask,
+    buildVectorSpriteTask
+  ),
+  buildSymbolCleanupTask
+);
 
-gulp.task('rebuild:images', rebuildImagesTask);
-module.exports = rebuildImagesTask;
+export default rebuildImagesTask;

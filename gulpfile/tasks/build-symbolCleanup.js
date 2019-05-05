@@ -9,7 +9,7 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 
 const $ = gulpLoadPlugins();
 
-const buildSymbolCleanupTask = () => {
+function buildSymbolCleanupTask() {
   return gulp
     .src([meow.dist.cssimg + meow.src.images.vectorSprite.symbolName], {
       base: './',
@@ -25,7 +25,6 @@ const buildSymbolCleanupTask = () => {
       })
     )
     .pipe(gulp.dest('./'));
-};
+}
 
-gulp.task('build:symbolCleanup', buildSymbolCleanupTask);
-module.exports = buildSymbolCleanupTask;
+export default buildSymbolCleanupTask;
