@@ -44,7 +44,7 @@ module.exports = {
     'no-undef': 0,
     indent: 1,
     'no-console': 1,
-    'no-new': 1,
+    'no-new': 0,
     'object-curly-spacing': 0,
     'arrow-body-style': [2, 'as-needed'],
     'no-param-reassign': [2, { props: false }],
