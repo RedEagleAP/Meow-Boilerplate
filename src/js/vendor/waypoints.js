@@ -165,8 +165,9 @@
     }
 
     window.Waypoint = Waypoint
-}())
-; (function () {
+});
+
+(function () {
     'use strict'
 
     function requestAnimationFrameShim(callback) {

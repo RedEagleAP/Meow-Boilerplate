@@ -17,6 +17,7 @@ const triggers = document.querySelectorAll ('.js-waypointTrigger');
 function initWaypoints (els) {
   els.forEach (el => {
     // New Waypoint
+    // eslint-disable-next-line no-new
     new Waypoint ({
       element: el,
       handler (direction) {
