@@ -4,6 +4,7 @@ module.exports = {
       '@babel/preset-env',
       {
         useBuiltIns: 'entry',
+        corejs: '3.0.1',
         // modules: false, // only use for element-ui
         debug: false,
       },
