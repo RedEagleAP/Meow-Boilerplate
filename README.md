@@ -440,6 +440,30 @@ When active, the generator is in the `src/` directory `template/` directory inte
 
  <img src="https://lh3.googleusercontent.com/EwMKSpw4lFng3LCfV0aASl4n6iUw29ZyG12OJw5dBmv63aNghE63OU3cNUQMlbzRdgy0QCM69mg" alt="template_structure">
 
+**Important**
+By default the compiler is disabled. To switch from html sructure to Twig you can do next steps:
+
+- In `config.js` move to `template.compiler` and switch `false` on `true`;
+- In `webpack.config.base.babel.js` comment HtmlWebpackPlugin call:
+
+```js
+  // comment this block of code
+  new HtmlWebpackPlugin({
+    filename: 'index.html',
+    template: utils.meowConf.src.structure + 'index.html',
+    inject: true,
+    hash: false,
+    minify: {
+      removeComments: true,
+      collapseWhitespace: true,
+      removeAttributeQuotes: false,
+      minifyCSS: true,
+      minifyJS: true,
+    },
+    chunksSortMode: 'dependency',
+  }),
+```
+
 </details>
 
 ---
@@ -481,8 +505,6 @@ In `src/js/` directory is the `main.js` file (can be renamed). That is our main 
 <p align="center">
  <img src="https://lh3.googleusercontent.com/8sCZMv7jIEs-OMm9Qluya-UQz4XOHYGPbBFQk22zL33nZ4gxQFdpocMVgHQd00-hk4XA-eI76P8" alt="main.js">
 </p>
-
-*The filename of the partials should begin with an **underscore**.*
 
 </details>
 
