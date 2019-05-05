@@ -170,10 +170,12 @@
     "width": "1024",
     "height": "768",
     "minify": true,
-    "inline": false,
+    "inline": true,
     "sources": [
       "index.html"
     ],
-    "destFilename": "critical.css"
+    "destFilename": [
+      "index.html"
+    ]
   }
 }
