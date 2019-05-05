@@ -1,7 +1,8 @@
 // Main JS File
 // Polyfills
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 import 'svgxuse';
-import '@babel/polyfill';
 
 // Import Partials
 import './lib/bling';
