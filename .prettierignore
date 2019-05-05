@@ -1,3 +1,4 @@
 **/*.scss
+src/js/vendor/*.js
 node_modules
 dist
