@@ -70,7 +70,7 @@ module.exports = ({ file, options, env }) => ({
         require('postcss-mimic.css-data'),
         require('postcss-tuesday.css-data'),
       ],
-      checkDuplications: true,
+      checkDuplications: false,
       disableCheckCssVariables: true,
     },
     /**
