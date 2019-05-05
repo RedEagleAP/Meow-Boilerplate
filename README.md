@@ -315,7 +315,7 @@ The necessary files can be found under `src/framework/`. Those who want to can e
 
 ***Framework Structure***
 
- <img src="https://lh3.googleusercontent.com/J7q9Y1ubx2l5UaXAoprc6TcwExA1g1LsIOKVpZ-FaRw642ciM7gKwF0TeAiv0TFYZBXrLvCEov4" alt="framework_structure">
+ <img src="https://i.imgur.com/uNNy6CD.png" alt="framework_structure">
 
 </details>
 
@@ -328,7 +328,7 @@ To generate the CSS file, you use the `main.scss` from the style directory (`src
 
 ***Styling Structure***
 
- <img src="https://lh3.googleusercontent.com/YyhCC28upTB-QQwFLhRHjPaovv2aItayuXesmWb4PIX0_fOCOlSHiBFD7smA9LQ_r9pw-Cu-ydU" alt="styling_structure">
+ <img src="https://i.imgur.com/DxE5wF3.png" alt="styling_structure">
 
 *You not need to worry about CSS3 prefixes the gulp-autoprefixer will insert it on any Compile.*
 
@@ -438,7 +438,7 @@ To generate HTML files, for example, to build a prototype, you can use HTML comp
 
 When active, the generator is in the `src/` directory `template/` directory integrated, there is also some basis are files (example with Twig).
 
- <img src="https://lh3.googleusercontent.com/EwMKSpw4lFng3LCfV0aASl4n6iUw29ZyG12OJw5dBmv63aNghE63OU3cNUQMlbzRdgy0QCM69mg" alt="template_structure">
+ <img src="https://i.imgur.com/nCnJbfm.png" alt="template_structure">
 
 **Important**
 
@@ -504,7 +504,7 @@ The Compiler is this, if not already, be switched off in the `config.json` (temp
 In `src/js/` directory is the `main.js` file (can be renamed). That is our main file events and scripts are controlled with Javascript. The file passes through a Gulp task, all in addition ESLint also the advantage that you can attach partials.
 
 <p align="center">
- <img src="https://lh3.googleusercontent.com/8sCZMv7jIEs-OMm9Qluya-UQz4XOHYGPbBFQk22zL33nZ4gxQFdpocMVgHQd00-hk4XA-eI76P8" alt="main.js">
+ <img src="https://i.imgur.com/ifYQ8CE.png" alt="main.js">
 </p>
 
 </details>
