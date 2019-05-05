@@ -33,4 +33,4 @@ const minifyImages = (srcfiles, distfiles) => {
     .pipe(gulp.dest(distfiles));
 };
 
-module.exports = minifyImages;
+export default minifyImages;

@@ -42,4 +42,4 @@ const globalMinifyCheck = () => {
   return gminify;
 };
 
-module.exports = globalMinifyCheck;
+export default globalMinifyCheck;

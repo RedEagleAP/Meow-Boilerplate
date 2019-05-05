@@ -6,7 +6,7 @@ import notify from 'gulp-notify';
 import yargs from 'yargs';
 const args = yargs.argv;
 
-module.exports = function(errorObject, callback) {
+function errorHandler(errorObject, callback) {
   const env = args.env || 'development';
 
   notify
@@ -25,4 +25,6 @@ module.exports = function(errorObject, callback) {
 
   // Crash Build Process on error in production-mode
   if (env !== 'development') process.exit(1);
-};
+}
+
+export default errorHandler;

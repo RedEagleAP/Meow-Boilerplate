@@ -13,7 +13,7 @@ import jpegCompress from 'imagemin-jpeg-recompress';
 const $ = gulpLoadPlugins();
 
 const copyImages = (srcfiles, distfiles) => {
-  return gulp
+  gulp
     .src(srcfiles + '**/*.{png,jpeg,jpg,gif,webp,svg}')
     .pipe(
       global.checkChanged === true ? $.changed(meow.dist.bitmaps) : gutil.noop()
@@ -21,4 +21,4 @@ const copyImages = (srcfiles, distfiles) => {
     .pipe(gulp.dest(distfiles));
 };
 
-module.exports = copyImages;
+export default copyImages;
