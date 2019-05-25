@@ -269,3 +269,112 @@
     transform: skew(0deg, -$skew);
   }
 }
+
+@mixin section-triangle($height: 60px, $width: 50vw, $color: #f8f5f2, $direction: 'down') {
+  $heightUnit: $height;
+  $widthUnit: $width;
+  $directionValue: $direction;
+
+  @if $heightUnit==1 {
+    $heightUnit: 1px;
+  }
+
+  @if $widthUnit==1 {
+    $widthUnit: 1px;
+  }
+
+  position: relative;
+
+  @if $directionValue=='down' {
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0; /// down
+      width: 0;
+      height: 0;
+      border-bottom: $heightUnit solid $color;
+    }
+  }
+
+  @else if $directionValue=='up' {
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: -$height; /// up
+      width: 0;
+      height: 0;
+      border-bottom: $heightUnit solid $color;
+    }
+  }
+
+  @if $width==50vw {
+    &::after {
+      left: calc(50% - 50vw);
+      border-right: 50vw solid transparent;
+    }
+
+    &::before {
+      right: calc(50% - 50vw);
+      border-left: 50vw solid transparent;
+    }
+  }
+
+  @else {
+    &::after {
+      left: 0;
+      border-right: $width solid transparent;
+    }
+
+    &::before {
+      right: 0;
+      border-left: $width solid transparent;
+    }
+  }
+}
+
+@mixin heading-line($height: 2px, $width: 50px, $color: #000, $margin: false) {
+  $heightUnit: $height;
+  $widthUnit: $width;
+  $marginUnit: $margin;
+
+  @if $heightUnit==1 {
+    $heightUnit: 1px;
+  }
+
+  @if $widthUnit==1 {
+    $widthUnit: 1px;
+  }
+
+  @if $marginUnit==1 {
+    $marginUnit: 1px;
+  }
+
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+
+    width: $widthUnit;
+    height: $heightUnit;
+
+    flex-grow: 1;
+    background-color: $color;
+  }
+
+  @if $margin {
+    &::before {
+      margin-right: $marginUnit;
+    }
+
+    &::after {
+      margin-left: $marginUnit;
+    }
+  }
+}
