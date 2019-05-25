@@ -242,7 +242,6 @@ p {
 
 // Links
 a {
-  outline: 0;
   line-height: inherit;
   background: transparent;
   color: map-get($meow-color-route, link);
@@ -278,8 +277,7 @@ a {
    *Use wisely!
    */
   &:hover,
-  &:active,
-  &:focus {
+  &:active {
     outline: 0;
   }
 }
@@ -602,6 +600,8 @@ input {
    */
   &:focus {
     outline: 0;
+    /*Gihub focus
+    box-shadow: 0 0 0 0.1em rgba(3, 102, 214, .4);*/
   }
 }
 
@@ -706,6 +706,8 @@ input::-moz-focus-inner {
 
 button:focus {
   outline: none;
+  /*Gihub focus
+    box-shadow: 0 0 0 0.1em rgba(3, 102, 214, .4);*/
 }
 
 // Textarea
